@@ -1,1 +1,1246 @@
+/* ===========================
+   MAWA Prime Digital - Animations CSS
+   =========================== */
 
+/* --- Stars Background --- */
+.stars-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  background: white;
+  clip-path: polygon(
+    50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%
+  );
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+.star.small {
+  width: 3px;
+  height: 3px;
+  animation-duration: 2s;
+}
+
+.star.medium {
+  width: 5px;
+  height: 5px;
+  animation-duration: 3s;
+}
+
+.star.large {
+  width: 8px;
+  height: 8px;
+  animation-duration: 4s;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* --- Sternschnuppen / Shooting Stars --- */
+.shooting-star {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 
+    0 0 6px white,
+    0 0 10px white,
+    0 0 20px rgba(255, 255, 255, 0.5);
+  opacity: 0;
+}
+
+.shooting-star::after {
+  content: '';
+  position: absolute;
+  height: 1px;
+  width: 0;
+  background: linear-gradient(90deg, white 0%, rgba(255, 255, 255, 0.8) 30%, rgba(255, 255, 255, 0.3) 60%, transparent 100%);
+  animation: tail 3s linear forwards;
+}
+
+/* Diagonal nach rechts unten (Schweif nach links oben) */
+.shooting-star.diagonal-right {
+  animation: shoot 3s linear forwards;
+}
+
+.shooting-star.diagonal-right::after {
+  top: 50%;
+  right: 4px;
+  transform: translateY(-50%) rotate(45deg);
+  transform-origin: right center;
+}
+
+@keyframes shoot {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(800px, 800px);
+    opacity: 0;
+  }
+}
+
+/* Diagonal nach links unten (Schweif nach rechts oben) */
+.shooting-star.diagonal-left {
+  animation: shootLeft 3s linear forwards;
+}
+
+.shooting-star.diagonal-left::after {
+  top: 50%;
+  left: 4px;
+  transform: translateY(-50%) rotate(-45deg);
+  transform-origin: left center;
+}
+
+@keyframes shootLeft {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-800px, 800px);
+    opacity: 0;
+  }
+}
+
+/* Senkrecht nach unten (Schweif nach oben) */
+.shooting-star.vertical {
+  animation: shootDown 3s linear forwards;
+}
+
+.shooting-star.vertical::after {
+  left: 50%;
+  bottom: 4px;
+  transform: translateX(-50%) rotate(90deg);
+  transform-origin: bottom center;
+}
+
+@keyframes shootDown {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(50px, 1000px);
+    opacity: 0;
+  }
+}
+
+/* Animation für den Schweif */
+@keyframes tail {
+  0% {
+    width: 0;
+  }
+  10% {
+    width: 40px;
+  }
+  30% {
+    width: 80px;
+  }
+  60% {
+    width: 100px;
+  }
+  90% {
+    width: 80px;
+    opacity: 0.5;
+  }
+  100% {
+    width: 50px;
+    opacity: 0;
+  }
+}
+
+/* Größere Sternschnuppen */
+.shooting-star.large {
+  width: 5px;
+  height: 5px;
+  box-shadow: 
+    0 0 10px white,
+    0 0 20px white,
+    0 0 30px rgba(0, 217, 255, 0.5);
+}
+
+.shooting-star.large::after {
+  height: 2px;
+  background: linear-gradient(90deg, white 0%, rgba(0, 217, 255, 0.8) 20%, rgba(0, 217, 255, 0.4) 50%, transparent 100%);
+}
+
+/* Add simple dots as stars fallback */
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: float-particle 20s linear infinite;
+}
+
+@keyframes float-particle {
+  from {
+    transform: translateY(100vh) translateX(0);
+  }
+  to {
+    transform: translateY(-10vh) translateX(100px);
+  }
+}
+
+/* --- Glitch Effect --- */
+.glitch {
+  position: relative;
+  animation: glitch-skew 1s infinite linear alternate-reverse;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch::before {
+  animation: glitch-1 0.2s infinite linear alternate-reverse;
+  clip: rect(0, 900px, 0, 0);
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glitch::after {
+  animation: glitch-2 0.3s infinite linear alternate-reverse;
+  clip: rect(0, 900px, 0, 0);
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@keyframes glitch-1 {
+  0%, 100% {
+    clip: rect(40px, 9999px, 20px, 0);
+    transform: skew(0.5deg);
+  }
+  20% {
+    clip: rect(20px, 9999px, 60px, 0);
+    transform: skew(0.5deg);
+  }
+  40% {
+    clip: rect(80px, 9999px, 40px, 0);
+    transform: skew(0.5deg);
+  }
+  60% {
+    clip: rect(10px, 9999px, 80px, 0);
+    transform: skew(0.5deg);
+  }
+  80% {
+    clip: rect(50px, 9999px, 30px, 0);
+    transform: skew(0.5deg);
+  }
+}
+
+@keyframes glitch-2 {
+  0%, 100% {
+    clip: rect(20px, 9999px, 60px, 0);
+    transform: skew(-0.5deg);
+  }
+  20% {
+    clip: rect(80px, 9999px, 20px, 0);
+    transform: skew(-0.5deg);
+  }
+  40% {
+    clip: rect(40px, 9999px, 80px, 0);
+    transform: skew(-0.5deg);
+  }
+  60% {
+    clip: rect(60px, 9999px, 30px, 0);
+    transform: skew(-0.5deg);
+  }
+  80% {
+    clip: rect(30px, 9999px, 70px, 0);
+    transform: skew(-0.5deg);
+  }
+}
+
+@keyframes glitch-skew {
+  0%, 100% {
+    transform: skew(0deg);
+  }
+  20% {
+    transform: skew(-2deg);
+  }
+  40% {
+    transform: skew(1deg);
+  }
+  60% {
+    transform: skew(-1deg);
+  }
+  80% {
+    transform: skew(2deg);
+  }
+}
+
+/* --- Glitch Text Animation --- */
+.glitch-text {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
+}
+
+.glitch-text::before {
+  animation: glitch-text-1 0.5s infinite;
+  color: var(--primary-color);
+  z-index: -1;
+}
+
+.glitch-text::after {
+  animation: glitch-text-2 0.5s infinite;
+  color: var(--secondary-color);
+  z-index: -2;
+}
+
+@keyframes glitch-text-1 {
+  0%, 100% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+}
+
+@keyframes glitch-text-2 {
+  0%, 100% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(2px, -2px);
+  }
+  40% {
+    transform: translate(2px, 2px);
+  }
+  60% {
+    transform: translate(-2px, -2px);
+  }
+  80% {
+    transform: translate(-2px, 2px);
+  }
+}
+
+/* --- Morphing Shapes --- */
+.floating-shapes {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  animation: morph 20s ease-in-out infinite;
+}
+
+.shape-1 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, var(--primary-color), transparent);
+  top: -300px;
+  left: -300px;
+  animation-duration: 25s;
+}
+
+.shape-2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--secondary-color), transparent);
+  bottom: -200px;
+  right: -200px;
+  animation-duration: 20s;
+  animation-delay: -5s;
+}
+
+.shape-3 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, var(--accent-color), transparent);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-duration: 30s;
+  animation-delay: -10s;
+}
+
+@keyframes morph {
+  0%, 100% {
+    border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    border-radius: 73% 27% 26% 74% / 48% 65% 35% 52%;
+    transform: rotate(90deg) scale(1.1);
+  }
+  50% {
+    border-radius: 28% 72% 44% 56% / 49% 40% 60% 51%;
+    transform: rotate(180deg) scale(0.9);
+  }
+  75% {
+    border-radius: 40% 60% 70% 30% / 47% 62% 38% 53%;
+    transform: rotate(270deg) scale(1.05);
+  }
+}
+
+/* --- Particle Effects --- */
+.particle-background {
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(107, 70, 193, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(0, 217, 255, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(255, 215, 0, 0.2) 0%, transparent 50%);
+  animation: particle-move 30s ease-in-out infinite;
+}
+
+@keyframes particle-move {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(30px, -30px) rotate(120deg);
+  }
+  66% {
+    transform: translate(-20px, 20px) rotate(240deg);
+  }
+}
+
+/* --- Liquid Animation --- */
+.liquid-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.liquid-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.liquid-button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* --- 3D Card Flip --- */
+.flip-card {
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+/* --- Gradient Animation --- */
+.gradient-move {
+  background: linear-gradient(270deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+  background-size: 600% 600%;
+  animation: gradient-shift 10s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* --- Pulse Animation --- */
+.pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+/* --- Shake Animation --- */
+.shake {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+/* --- Bounce Animation --- */
+.bounce {
+  animation: bounce 1s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* --- Rotate Animation --- */
+.rotate {
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* --- Slide Animations --- */
+.slide-in-left {
+  animation: slide-in-left 0.5s ease-out;
+}
+
+@keyframes slide-in-left {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-right {
+  animation: slide-in-right 0.5s ease-out;
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* --- Wave Animation --- */
+.wave {
+  animation: wave 2s ease-in-out infinite;
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+}
+
+/* --- Typewriter Effect --- */
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typewriter 4s steps(40, end);
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* --- Sparkle Animation --- */
+.sparkle {
+  position: relative;
+}
+
+.sparkle::before,
+.sparkle::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  animation: sparkle 1.5s linear infinite;
+}
+
+.sparkle::before {
+  top: -5px;
+  left: -5px;
+  animation-delay: 0s;
+}
+
+.sparkle::after {
+  bottom: -5px;
+  right: -5px;
+  animation-delay: 0.75s;
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* --- Ripple Effect --- */
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, -50%);
+  animation: ripple-effect 1s ease-out;
+}
+
+@keyframes ripple-effect {
+  to {
+    width: 200%;
+    height: 200%;
+    opacity: 0;
+  }
+}
+
+/* --- Blink Animation --- */
+.blink {
+  animation: blink 1s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* --- Perspective Transform --- */
+.perspective {
+  animation: perspective 3s ease-in-out infinite;
+}
+
+@keyframes perspective {
+  0%, 100% {
+    transform: perspective(400px) rotateY(0);
+  }
+  50% {
+    transform: perspective(400px) rotateY(180deg);
+  }
+}
+
+/* --- Morph Button --- */
+.morph {
+  animation: morph-button 4s ease-in-out infinite;
+}
+
+@keyframes morph-button {
+  0%, 100% {
+    border-radius: 50px;
+  }
+  25% {
+    border-radius: 20px;
+  }
+  50% {
+    border-radius: 10px;
+  }
+  75% {
+    border-radius: 30px;
+  }
+}
+
+/* --- Glow Effect --- */
+.glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color), 0 0 30px var(--primary-color);
+  }
+  to {
+    box-shadow: 0 0 20px var(--primary-color), 0 0 30px var(--primary-color), 0 0 40px var(--primary-color);
+  }
+}
+
+/* --- Float Animation --- */
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* --- Send Animation --- */
+.send {
+  animation: send 1s ease-out;
+}
+
+@keyframes send {
+  from {
+    transform: translateX(0) rotate(0deg);
+  }
+  to {
+    transform: translateX(100px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+/* --- Chart Animation --- */
+.chart {
+  animation: chart-grow 1s ease-out;
+}
+
+@keyframes chart-grow {
+  from {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+/* --- Shield Animation --- */
+.shield {
+  animation: shield-pulse 2s ease-in-out infinite;
+}
+
+@keyframes shield-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+/* --- Server Animation --- */
+.server {
+  animation: server-blink 3s ease-in-out infinite;
+}
+
+@keyframes server-blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  10%, 30%, 50%, 70%, 90% {
+    opacity: 0.5;
+  }
+  20%, 40%, 60%, 80% {
+    opacity: 1;
+  }
+}
+
+/* --- Speed Animation --- */
+.speed {
+  animation: speed-lines 2s linear infinite;
+}
+
+@keyframes speed-lines {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+/* --- Lock Animation --- */
+.lock {
+  animation: lock-shake 0.5s ease-in-out;
+}
+
+@keyframes lock-shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+/* --- Support Animation --- */
+.support {
+  animation: support-ring 1.5s ease-in-out infinite;
+}
+
+@keyframes support-ring {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(180deg);
+  }
+}
+
+/* --- Animated Background Gradients --- */
+.animated-gradient {
+  background: linear-gradient(
+    -45deg,
+    var(--primary-color),
+    var(--secondary-color),
+    var(--accent-color),
+    var(--primary-color)
+  );
+  background-size: 400% 400%;
+  animation: gradient-animation 15s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* --- Grid Pattern Animation --- */
+.grid-pattern {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: grid-move 10s linear infinite;
+}
+
+@keyframes grid-move {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(50px, 50px);
+  }
+}
+
+/* --- Floating Elements --- */
+.floating-elements {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.element {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  animation: float-random 20s infinite;
+}
+
+.element-1 {
+  width: 80px;
+  height: 80px;
+  top: 20%;
+  left: 10%;
+  animation-duration: 15s;
+}
+
+.element-2 {
+  width: 120px;
+  height: 120px;
+  top: 60%;
+  right: 15%;
+  animation-duration: 20s;
+  animation-delay: -5s;
+}
+
+.element-3 {
+  width: 60px;
+  height: 60px;
+  bottom: 20%;
+  left: 50%;
+  animation-duration: 25s;
+  animation-delay: -10s;
+}
+
+@keyframes float-random {
+  0%, 100% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-50px) translateX(30px) rotate(90deg);
+  }
+  50% {
+    transform: translateY(30px) translateX(-20px) rotate(180deg);
+  }
+  75% {
+    transform: translateY(-30px) translateX(-30px) rotate(270deg);
+  }
+}
+
+/* --- Transform Animations --- */
+.transform {
+  animation: transform-3d 3s ease-in-out infinite;
+}
+
+@keyframes transform-3d {
+  0%, 100% {
+    transform: rotateX(0) rotateY(0) rotateZ(0);
+  }
+  25% {
+    transform: rotateX(30deg) rotateY(30deg) rotateZ(30deg);
+  }
+  50% {
+    transform: rotateX(-30deg) rotateY(-30deg) rotateZ(-30deg);
+  }
+  75% {
+    transform: rotateX(15deg) rotateY(-15deg) rotateZ(15deg);
+  }
+}
+
+/* --- Flip Animations --- */
+.flip {
+  animation: flip-vertical 1s ease-in-out;
+}
+
+@keyframes flip-vertical {
+  from {
+    transform: rotateX(0);
+  }
+  to {
+    transform: rotateX(360deg);
+  }
+}
+
+/* --- Slide Animation --- */
+.slide {
+  animation: slide-horizontal 2s ease-in-out infinite alternate;
+}
+
+@keyframes slide-horizontal {
+  from {
+    transform: translateX(-20px);
+  }
+  to {
+    transform: translateX(20px);
+  }
+}
+
+/* --- Spin Animation --- */
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* --- Contact Form Animations --- */
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+  animation: input-focus 0.3s ease;
+}
+
+@keyframes input-focus {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* --- Success Animation --- */
+.success-icon {
+  animation: success-check 0.5s ease-out;
+}
+
+@keyframes success-check {
+  0% {
+    transform: scale(0) rotate(45deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2) rotate(45deg);
+  }
+  100% {
+    transform: scale(1) rotate(45deg);
+    opacity: 1;
+  }
+}
+
+/* --- Loading Animation --- */
+.button-loader {
+  display: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid transparent;
+  border-top-color: white;
+  border-radius: 50%;
+  animation: button-loading 0.8s linear infinite;
+}
+
+.loading .button-loader {
+  display: inline-block;
+}
+
+.loading .button-text {
+  display: none;
+}
+
+@keyframes button-loading {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* --- FAQ Animations --- */
+.faq-icon {
+  transition: transform 0.3s ease;
+}
+
+.faq-question[aria-expanded="true"] .faq-icon {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-question[aria-expanded="true"] + .faq-answer {
+  max-height: 500px;
+  padding: 1rem 0;
+}
+
+/* --- AOS (Animate On Scroll) Style Animations --- */
+[data-aos="fade-up"] {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+[data-aos="fade-up"].aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-aos="fade-down"] {
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+[data-aos="fade-down"].aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-aos="fade-left"] {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+[data-aos="fade-left"].aos-animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+[data-aos="fade-right"] {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+[data-aos="fade-right"].aos-animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+[data-aos="zoom-in"] {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+[data-aos="zoom-in"].aos-animate {
+  opacity: 1;
+  transform: scale(1);
+}
+
+[data-aos="flip-left"] {
+  opacity: 0;
+  transform: rotateY(-180deg);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+[data-aos="flip-left"].aos-animate {
+  opacity: 1;
+  transform: rotateY(0);
+}
+
+[data-aos="slide-up"] {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+[data-aos="slide-up"].aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
