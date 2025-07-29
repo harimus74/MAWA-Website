@@ -1,0 +1,511 @@
+/* ===========================
+   MAWA Prime Digital - Print CSS
+   Optimierte Styles für Druckausgabe
+   =========================== */
+
+/* --- Print Media Query --- */
+@media print {
+  
+  /* --- Reset & Base Styles --- */
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  /* Basis-Schriftgröße für Druck */
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #000;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Container für optimale Seitenbreite */
+  .container {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* --- Typography für Druck --- */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+  }
+  
+  h1 { font-size: 24pt; }
+  h2 { font-size: 20pt; }
+  h3 { font-size: 16pt; }
+  h4 { font-size: 14pt; }
+  h5 { font-size: 12pt; }
+  h6 { font-size: 11pt; }
+  
+  p {
+    margin-bottom: 0.75em;
+    orphans: 3;
+    widows: 3;
+  }
+  
+  /* Links für Druck */
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+  
+  /* URLs nach Links anzeigen (außer bei internen Ankern) */
+  a[href^="http"]:after,
+  a[href^="https"]:after {
+    content: " (" attr(href) ")";
+    font-size: 90%;
+    font-style: italic;
+  }
+  
+  /* Keine URLs für interne Links */
+  a[href^="#"]:after,
+  a[href^="/"]:after,
+  a[href^="mailto:"]:after,
+  a[href^="tel:"]:after {
+    content: "";
+  }
+  
+  /* E-Mail und Telefon direkt anzeigen */
+  a[href^="mailto:"]:after {
+    content: " (" attr(href) ")";
+  }
+  
+  a[href^="tel:"]:after {
+    content: " (" attr(href) ")";
+  }
+  
+  /* --- Elemente die nicht gedruckt werden sollen --- */
+  .main-header,
+  .main-footer,
+  .mobile-menu-toggle,
+  .nav-menu,
+  .cookie-banner,
+  .hero-scroll-indicator,
+  .social-links,
+  .social-link,
+  .particle-background,
+  .floating-shapes,
+  .animated-gradient,
+  .floating-elements,
+  .stars-background,
+  .shooting-star,
+  .portfolio-overlay,
+  .cta-section,
+  .cta-button,
+  .btn-primary,
+  .btn-secondary,
+  .btn-ghost,
+  .magic-button,
+  .button-particles,
+  .skip-link,
+  .scroll-to-top,
+  .scroll-progress,
+  video,
+  iframe,
+  .placeholder-notice,
+  .custom-cursor,
+  .cursor-dot {
+    display: none !important;
+  }
+  
+  /* --- Spezifische Seiten-Styles --- */
+  
+  /* Hero Sections vereinfachen */
+  .hero-section,
+  .page-hero {
+    min-height: auto !important;
+    padding: 2em 0 !important;
+    background: none !important;
+    page-break-after: avoid;
+  }
+  
+  .hero-content {
+    text-align: left;
+    padding: 0;
+  }
+  
+  .hero-title {
+    font-size: 28pt !important;
+    color: #000 !important;
+    background: none !important;
+    -webkit-background-clip: initial !important;
+    -webkit-text-fill-color: initial !important;
+    background-clip: initial !important;
+    margin-bottom: 0.5em;
+  }
+  
+  .hero-subtitle {
+    font-size: 14pt;
+    color: #333 !important;
+    margin-bottom: 1em;
+  }
+  
+  /* Sections */
+  section {
+    padding: 1em 0 !important;
+    page-break-inside: avoid;
+    background: none !important;
+  }
+  
+  .section-title {
+    font-size: 20pt;
+    margin-bottom: 0.5em;
+    page-break-after: avoid;
+  }
+  
+  .section-subtitle,
+  .section-lead {
+    font-size: 12pt;
+    color: #333 !important;
+    margin-bottom: 0.5em;
+  }
+  
+  /* --- Services Grid für Druck --- */
+  .services-grid,
+  .features-grid,
+  .portfolio-grid,
+  .team-grid,
+  .stats-grid,
+  .values-grid,
+  .awards-grid {
+    display: block !important;
+  }
+  
+  .service-card,
+  .feature-item,
+  .portfolio-item,
+  .team-member,
+  .stat-item,
+  .value-card,
+  .award-item {
+    display: block !important;
+    margin-bottom: 1.5em;
+    padding: 1em !important;
+    border: 1px solid #ccc !important;
+    page-break-inside: avoid;
+    background: none !important;
+  }
+  
+  .service-icon,
+  .feature-icon,
+  .value-icon {
+    display: none !important;
+  }
+  
+  /* Portfolio Anpassungen */
+  .portfolio-image {
+    max-height: 200pt;
+    overflow: hidden;
+    margin-bottom: 0.5em;
+  }
+  
+  .portfolio-image img {
+    width: 100%;
+    height: auto;
+    max-height: 200pt;
+    object-fit: contain;
+  }
+  
+  /* Team Member Anpassungen */
+  .member-image {
+    display: none !important;
+  }
+  
+  .member-info h3 {
+    font-size: 14pt;
+    margin-bottom: 0.25em;
+  }
+  
+  .member-role {
+    font-style: italic;
+    color: #666 !important;
+    margin-bottom: 0.25em;
+  }
+  
+  /* --- Formulare für Druck --- */
+  form {
+    display: none !important;
+  }
+  
+  /* Kontaktinformationen stattdessen anzeigen */
+  .contact-info {
+    display: block !important;
+    border: 1px solid #000;
+    padding: 1em;
+    margin: 1em 0;
+    page-break-inside: avoid;
+  }
+  
+  .contact-info h3 {
+    font-size: 14pt;
+    margin-bottom: 0.5em;
+  }
+  
+  /* --- Legal Pages Anpassungen --- */
+  .legal-content {
+    background: none !important;
+    padding: 0 !important;
+  }
+  
+  .legal-content .content-wrapper {
+    background: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+  }
+  
+  /* Inhaltsverzeichnis für Druck */
+  .table-of-contents {
+    border: 1px solid #000;
+    padding: 1em !important;
+    margin-bottom: 2em;
+    page-break-after: avoid;
+    background: none !important;
+  }
+  
+  .table-of-contents::before {
+    display: none !important;
+  }
+  
+  .table-of-contents h2 {
+    font-size: 16pt;
+    margin-bottom: 0.5em;
+  }
+  
+  .table-of-contents a {
+    color: #000;
+    text-decoration: none;
+  }
+  
+  .table-of-contents a:after {
+    content: " (Seite " target-counter(attr(href), page) ")";
+  }
+  
+  /* Legal Sections */
+  .legal-content section {
+    page-break-inside: avoid;
+    margin-bottom: 1.5em;
+  }
+  
+  .legal-content h2 {
+    font-size: 18pt;
+    border-bottom: 2px solid #000 !important;
+    padding-bottom: 0.25em;
+    margin-bottom: 0.5em;
+  }
+  
+  .legal-content h2::after {
+    display: none !important;
+  }
+  
+  /* Address Block */
+  .legal-content address {
+    border: 1px solid #000;
+    padding: 0.75em !important;
+    background: none !important;
+    page-break-inside: avoid;
+  }
+  
+  /* --- Tabellen für Druck --- */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    page-break-inside: auto;
+  }
+  
+  thead {
+    display: table-header-group;
+  }
+  
+  tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+  }
+  
+  td, th {
+    border: 1px solid #000;
+    padding: 0.5em;
+  }
+  
+  /* --- Listen --- */
+  ul, ol {
+    margin-left: 1.5em;
+    margin-bottom: 0.75em;
+  }
+  
+  li {
+    margin-bottom: 0.25em;
+  }
+  
+  /* --- Bilder für Druck --- */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+    page-break-inside: avoid;
+    display: block;
+    margin: 0.5em 0;
+  }
+  
+  /* --- Seitenumbrüche --- */
+  .page-break {
+    page-break-after: always;
+  }
+  
+  .no-break {
+    page-break-inside: avoid;
+  }
+  
+  /* --- Footer Information für Druck --- */
+  @page {
+    margin: 2cm;
+    size: A4;
+  }
+  
+  /* Seitenzahlen */
+  @page :footer {
+    content: "Seite " counter(page) " von " counter(pages);
+  }
+  
+  /* --- Druck-spezifische Utility Classes --- */
+  .print-only {
+    display: block !important;
+  }
+  
+  .screen-only {
+    display: none !important;
+  }
+  
+  /* --- FAQ Anpassungen --- */
+  .faq-question {
+    font-weight: bold;
+    margin-bottom: 0.25em;
+    page-break-after: avoid;
+  }
+  
+  .faq-answer {
+    margin-bottom: 1em;
+    padding-left: 1em;
+  }
+  
+  .faq-icon {
+    display: none !important;
+  }
+  
+  /* --- Testimonials für Druck --- */
+  .testimonial-item {
+    border: 1px solid #000;
+    padding: 1em;
+    margin-bottom: 1em;
+    page-break-inside: avoid;
+  }
+  
+  .testimonial-content {
+    background: none !important;
+  }
+  
+  .quote-icon {
+    display: none !important;
+  }
+  
+  .testimonial-author {
+    margin-top: 0.5em;
+    font-style: italic;
+  }
+  
+  .testimonial-nav {
+    display: none !important;
+  }
+  
+  /* --- Counter/Stats --- */
+  .stat-number {
+    font-size: 18pt;
+    font-weight: bold;
+  }
+  
+  .stat-suffix {
+    font-size: 14pt;
+  }
+  
+  .stat-label {
+    font-size: 10pt;
+    color: #666 !important;
+  }
+  
+  /* --- Accessibility für Druck --- */
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  
+  /* --- Code Blocks --- */
+  pre, code {
+    font-family: 'Courier New', monospace;
+    font-size: 10pt;
+    background: #f5f5f5 !important;
+    border: 1px solid #ddd;
+    padding: 0.5em;
+    page-break-inside: avoid;
+  }
+  
+  /* --- Blockquotes --- */
+  blockquote {
+    border-left: 3px solid #000;
+    padding-left: 1em;
+    margin: 1em 0;
+    font-style: italic;
+    page-break-inside: avoid;
+  }
+  
+  /* --- Definitionen für bessere Lesbarkeit --- */
+  strong, b {
+    font-weight: bold;
+  }
+  
+  em, i {
+    font-style: italic;
+  }
+  
+  /* --- Entfernen von Animationen --- */
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* --- Zusätzliche Print Utilities --- */
+@media print {
+  /* Landscape Orientation für breite Tabellen */
+  .print-landscape {
+    size: landscape;
+  }
+  
+  /* Verstecke leere Elemente */
+  *:empty {
+    display: none !important;
+  }
+  
+  /* Copyright Notice am Ende jeder Seite */
+  .print-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 10pt;
+    color: #666;
+    padding: 0.5em;
+  }
+}
