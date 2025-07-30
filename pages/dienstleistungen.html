@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/animations.css">
     <link rel="stylesheet" href="/css/responsive.css">
+    <link rel="stylesheet" href="/css/services.css">
     <link rel="stylesheet" href="/css/print.css" media="print">
     
     <!-- Schema.org Service Markup -->
@@ -74,6 +75,18 @@
     <!-- Skip to Content -->
     <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
     
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" class="cookie-banner" role="region" aria-label="Cookie-Einstellungen">
+        <div class="cookie-content">
+            <p>Wir verwenden Cookies, um Ihre Erfahrung zu verbessern. Durch die Nutzung unserer Website stimmen Sie unserer <a href="/pages/datenschutz.html">Datenschutzerklärung</a> zu.</p>
+            <div class="cookie-buttons">
+                <button id="accept-cookies" class="btn-primary">Alle akzeptieren</button>
+                <button id="reject-cookies" class="btn-secondary">Nur notwendige</button>
+                <button id="cookie-settings" class="btn-ghost">Einstellungen</button>
+            </div>
+        </div>
+    </div>
+    
     <!-- Header -->
     <header class="main-header" role="banner">
         <nav class="navbar" role="navigation" aria-label="Hauptnavigation">
@@ -104,18 +117,22 @@
     <main id="main-content" role="main">
         <!-- Page Hero -->
         <section class="page-hero services-hero" aria-labelledby="page-title">
+            <div class="particle-background" id="particles"></div>
             <div class="hero-background">
-                <div class="floating-shapes">
-                    <div class="shape shape-1"></div>
-                    <div class="shape shape-2"></div>
-                    <div class="shape shape-3"></div>
-                </div>
+                <div class="stars-background"></div>
             </div>
             <div class="container">
                 <div class="hero-content">
-                    <h1 id="page-title" class="page-title glitch-text">Unsere Dienstleistungen</h1>
-                    <p class="page-subtitle">Maßgeschneiderte Lösungen für Ihren digitalen Erfolg</p>
+                    <h1 id="page-title" class="page-title">
+                        <div style="display: block; color: #8B5CF6; font-weight: 900; text-shadow: 0 0 30px rgba(139, 92, 246, 0.8), 0 0 60px rgba(139, 92, 246, 0.6), 0 0 90px rgba(139, 92, 246, 0.4); animation: fadeInUp 1s ease forwards, pulseGlow 3s ease-in-out infinite;">UNSERE</div>
+                        <div style="display: block; color: #00D9FF; font-weight: 900; text-shadow: 0 0 30px rgba(0, 217, 255, 0.8), 0 0 60px rgba(0, 217, 255, 0.6), 0 0 90px rgba(0, 217, 255, 0.4); animation: fadeInUp 1s ease 0.3s forwards, pulseGlow2 3s ease-in-out infinite; opacity: 0;">DIENSTLEISTUNGEN</div>
+                    </h1>
+                    <p class="page-subtitle" style="animation: fadeInUp 1s ease 0.6s forwards; opacity: 0;">Maßgeschneiderte Lösungen für Ihren digitalen Erfolg</p>
                 </div>
+            </div>
+            <div class="hero-scroll-indicator">
+                <span class="scroll-text">Entdecken</span>
+                <div class="scroll-line"></div>
             </div>
         </section>
         
@@ -703,9 +720,10 @@
         
         <!-- CTA Section -->
         <section class="cta-section gradient-bg" aria-labelledby="cta-heading">
+            <div class="particle-background" id="cta-particles"></div>
             <div class="container">
                 <div class="cta-content text-center">
-                    <h2 id="cta-heading" class="cta-title">Bereit für Ihr nächstes Projekt?</h2>
+                    <h2 id="cta-heading" class="cta-title glitch-text" data-text="Bereit für Ihr nächstes Projekt?">Bereit für Ihr nächstes Projekt?</h2>
                     <p class="cta-text">Lassen Sie uns gemeinsam Großartiges erschaffen</p>
                     <a href="/pages/kontakt.html" class="btn-primary btn-large magic-button">
                         <span class="button-text">Kostenloses Beratungsgespräch</span>
@@ -782,5 +800,6 @@
     <script src="/js/smooth-scroll.js" defer></script>
     <script src="/js/cookie-consent.js" defer></script>
     <script src="/js/form-handler.js" defer></script>
+    <script src="/js/services.js" defer></script>
 </body>
 </html>
