@@ -167,12 +167,17 @@
     opacity: 0.8;
 }
 
-/* --- Story Section --- */
+/* --- Story Section Enhanced --- */
 .story-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: 1fr;
     gap: 3rem;
-    margin-top: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.story-content {
+    width: 100%;
 }
 
 .story-card {
@@ -209,10 +214,22 @@
     opacity: 1;
 }
 
+.story-card .card-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 2rem;
+    position: relative;
+    transition: transform var(--transition-medium);
+}
+
+.story-card:hover .card-icon {
+    transform: scale(1.1);
+}
+
 .story-card h3 {
     color: #0A0E1A !important;
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     margin-bottom: 1rem;
 }
 
@@ -223,53 +240,18 @@
     margin-bottom: 1rem;
 }
 
-.card-icon {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 2rem;
-    position: relative;
-    transition: transform var(--transition-medium);
-}
-
-.icon-wrapper {
+/* Stats Section Enhanced */
+.story-stats {
     width: 100%;
-    height: 100%;
-    background: var(--primary-gradient);
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
 }
 
-.icon-wrapper::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.3) 50%, transparent 70%);
-    animation: shimmer 3s infinite;
-}
-
-.icon-wrapper svg {
-    width: 40px;
-    height: 40px;
-    fill: white;
-    position: relative;
-    z-index: 1;
-}
-
-/* Stats Card */
 .stats-card {
     background: white;
     border-radius: 20px;
     padding: 3rem;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
 }
 
@@ -295,12 +277,27 @@
     align-items: center;
     justify-content: center;
     margin: 0 auto 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-icon::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.3) 50%, transparent 70%);
+    animation: shimmer 3s infinite;
 }
 
 .stat-icon svg {
     width: 30px;
     height: 30px;
     fill: white;
+    position: relative;
+    z-index: 1;
 }
 
 .stat-value {
@@ -318,16 +315,13 @@
     font-size: 1rem;
 }
 
-/* Timeline */
+/* Timeline Enhanced */
 .story-timeline {
     background: linear-gradient(135deg, white 0%, #f8f9fa 100%);
     border-radius: 20px;
     padding: 3rem;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
     margin-top: 3rem;
-}
-
-.story-timeline.full-width {
     grid-column: 1 / -1;
 }
 
@@ -394,7 +388,7 @@
     color: #495057;
 }
 
-/* --- Mission Section --- */
+/* --- Mission Section Enhanced --- */
 .mission-statement {
     margin-bottom: 3rem;
 }
@@ -459,6 +453,18 @@
     transform: translateX(0);
 }
 
+.value-card .card-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 2rem;
+    position: relative;
+    transition: transform var(--transition-medium);
+}
+
+.value-card:hover .card-icon {
+    transform: scale(1.1);
+}
+
 .value-card h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
@@ -502,6 +508,38 @@
 .value-card:hover .feature-list li::before {
     color: var(--secondary-color);
     transform: rotate(180deg);
+}
+
+/* Icon Wrapper - Same style as story section */
+.icon-wrapper {
+    width: 100%;
+    height: 100%;
+    background: var(--primary-gradient);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.icon-wrapper::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.3) 50%, transparent 70%);
+    animation: shimmer 3s infinite;
+}
+
+.icon-wrapper svg {
+    width: 40px;
+    height: 40px;
+    fill: white;
+    position: relative;
+    z-index: 1;
 }
 
 /* --- Team Section Enhanced --- */

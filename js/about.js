@@ -235,6 +235,8 @@ function initTeamInteractions() {
         const card = member.querySelector('.member-card');
         const image = member.querySelector('.member-image img');
         
+        if (!card) return;
+        
         // 3D tilt effect on hover
         card.addEventListener('mousemove', function(e) {
             const rect = this.getBoundingClientRect();
@@ -280,6 +282,7 @@ function initTimelineAnimation() {
     if (timelineTrack && window.innerWidth <= 768) {
         let scrollPosition = 0;
         const scrollSpeed = 1;
+        let autoScrollInterval;
         
         function autoScroll() {
             scrollPosition += scrollSpeed;
@@ -289,15 +292,20 @@ function initTimelineAnimation() {
             timelineTrack.scrollLeft = scrollPosition;
         }
         
-        // Stop auto-scroll on user interaction
-        let autoScrollInterval = setInterval(autoScroll, 50);
+        // Start auto-scroll
+        autoScrollInterval = setInterval(autoScroll, 50);
         
+        // Stop auto-scroll on user interaction
         timelineTrack.addEventListener('mouseenter', () => {
             clearInterval(autoScrollInterval);
         });
         
         timelineTrack.addEventListener('touchstart', () => {
             clearInterval(autoScrollInterval);
+        });
+        
+        timelineTrack.addEventListener('mouseleave', () => {
+            autoScrollInterval = setInterval(autoScroll, 50);
         });
     }
 }
@@ -307,6 +315,8 @@ function initTimelineAnimation() {
  */
 function initCounterAnimations() {
     const counters = document.querySelectorAll('[data-count]');
+    
+    if (!counters.length) return;
     
     const observerOptions = {
         threshold: 0.5,
@@ -448,6 +458,60 @@ style.textContent = `
         to {
             opacity: 1;
             transform: translateY(0);
+        }
+    }
+    
+    /* Icon animations */
+    @keyframes pulse {
+        0%, 100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 0.8;
+            transform: scale(1.05);
+        }
+    }
+    
+    @keyframes rotate {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    
+    @keyframes bounce {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-20px);
+        }
+    }
+    
+    @keyframes shake {
+        10%, 90% {
+            transform: translate3d(-1px, 0, 0);
+        }
+        20%, 80% {
+            transform: translate3d(2px, 0, 0);
+        }
+        30%, 50%, 70% {
+            transform: translate3d(-4px, 0, 0);
+        }
+        40%, 60% {
+            transform: translate3d(4px, 0, 0);
+        }
+    }
+    
+    @keyframes flip-vertical {
+        from {
+            transform: rotateX(0);
+        }
+        to {
+            transform: rotateX(360deg);
         }
     }
 `;
