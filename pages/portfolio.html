@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/animations.css">
     <link rel="stylesheet" href="/css/responsive.css">
+    <link rel="stylesheet" href="/css/portfolio.css">
     
     <!-- Schema.org Portfolio Markup -->
     <script type="application/ld+json">
@@ -60,6 +61,18 @@
     <!-- Skip to Content -->
     <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
     
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" class="cookie-banner" role="region" aria-label="Cookie-Einstellungen">
+        <div class="cookie-content">
+            <p>Wir verwenden Cookies, um Ihre Erfahrung zu verbessern. Durch die Nutzung unserer Website stimmen Sie unserer <a href="/pages/datenschutz.html">Datenschutzerklärung</a> zu.</p>
+            <div class="cookie-buttons">
+                <button id="accept-cookies" class="btn-primary">Alle akzeptieren</button>
+                <button id="reject-cookies" class="btn-secondary">Nur notwendige</button>
+                <button id="cookie-settings" class="btn-ghost">Einstellungen</button>
+            </div>
+        </div>
+    </div>
+    
     <!-- Header -->
     <header class="main-header" role="banner">
         <nav class="navbar" role="navigation" aria-label="Hauptnavigation">
@@ -88,287 +101,218 @@
     
     <!-- Main Content -->
     <main id="main-content" role="main">
-        <!-- Page Hero -->
+        <!-- Enhanced Hero Section with Services Style -->
         <section class="page-hero portfolio-hero" aria-labelledby="page-title">
+            <div class="particle-background" id="particles"></div>
             <div class="hero-background">
-                <div class="grid-pattern"></div>
-                <div class="floating-elements">
-                    <div class="element element-1"></div>
-                    <div class="element element-2"></div>
-                    <div class="element element-3"></div>
-                </div>
+                <div class="stars-background"></div>
             </div>
             <div class="container">
                 <div class="hero-content">
-                    <h1 id="page-title" class="page-title glitch-text">Unsere Arbeiten</h1>
-                    <p class="page-subtitle">Digitale Meisterwerke die begeistern</p>
+                    <h1 id="page-title" class="page-title">
+                        <div style="display: block; color: #8B5CF6; font-weight: 900; text-shadow: 0 0 30px rgba(139, 92, 246, 0.8), 0 0 60px rgba(139, 92, 246, 0.6), 0 0 90px rgba(139, 92, 246, 0.4); animation: fadeInUp 1s ease forwards, pulseGlow 3s ease-in-out infinite;">UNSERE</div>
+                        <div style="display: block; color: #00D9FF; font-weight: 900; text-shadow: 0 0 30px rgba(0, 217, 255, 0.8), 0 0 60px rgba(0, 217, 255, 0.6), 0 0 90px rgba(0, 217, 255, 0.4); animation: fadeInUp 1s ease 0.3s forwards, pulseGlow2 3s ease-in-out infinite; opacity: 0;">ARBEITEN</div>
+                    </h1>
+                    <p class="page-subtitle" style="animation: fadeInUp 1s ease 0.6s forwards; opacity: 0;">Digitale Meisterwerke die begeistern</p>
                 </div>
+            </div>
+            <div class="hero-scroll-indicator">
+                <span class="scroll-text">Entdecken</span>
+                <div class="scroll-line"></div>
             </div>
         </section>
         
-        <!-- Portfolio Filter -->
-        <section class="portfolio-filter" aria-label="Portfolio Filter">
+        <!-- Enhanced Portfolio Filter with Services Nav Style -->
+        <nav class="portfolio-filter sticky-nav" aria-label="Portfolio Filter">
             <div class="container">
-                <div class="filter-wrapper">
-                    <button class="filter-btn active" data-filter="all">Alle Projekte</button>
-                    <button class="filter-btn" data-filter="web">Webentwicklung</button>
-                    <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
-                    <button class="filter-btn" data-filter="app">Web Apps</button>
-                    <button class="filter-btn" data-filter="design">Design</button>
-                </div>
+                <ul class="filter-nav-list">
+                    <li><button class="filter-item active" data-filter="all">Alle Projekte</button></li>
+                    <li><button class="filter-item" data-filter="web">Webentwicklung</button></li>
+                    <li><button class="filter-item" data-filter="ecommerce">E-Commerce</button></li>
+                    <li><button class="filter-item" data-filter="app">Web Apps</button></li>
+                    <li><button class="filter-item" data-filter="design">Design</button></li>
+                </ul>
             </div>
-        </section>
+        </nav>
         
-        <!-- Portfolio Grid -->
-        <section class="portfolio-grid-section" aria-labelledby="portfolio-heading">
+        <!-- Portfolio Grid Section -->
+        <section class="portfolio-section" aria-labelledby="portfolio-heading">
             <div class="container">
-                <h2 id="portfolio-heading" class="visually-hidden">Portfolio Projekte</h2>
+                <div class="section-header">
+                    <h2 id="portfolio-heading" class="section-title">
+                        <span class="title-number">01</span>
+                        Ausgewählte Projekte
+                    </h2>
+                    <p class="section-lead">Erfolgsgeschichten die für sich sprechen</p>
+                </div>
                 
                 <div class="portfolio-grid">
                     <!-- Project 1 -->
-                    <article class="portfolio-item" data-category="ecommerce" data-aos="fade-up" id="project-1">
-                        <div class="portfolio-card">
-                            <div class="portfolio-image-wrapper">
-                                <img src="/assets/images/portfolio/luxusmode-preview.jpg" alt="Luxusmode Online Shop Preview" loading="lazy">
-                                <div class="portfolio-overlay">
-                                    <div class="overlay-content">
-                                        <h3>Luxusmode Online</h3>
-                                        <p>Premium E-Commerce Plattform</p>
-                                        <a href="#project-detail-1" class="btn-secondary view-project">Projekt ansehen</a>
+                    <article class="portfolio-card" data-category="ecommerce" data-aos="fade-up">
+                        <div class="card-image">
+                            <img src="/assets/images/portfolio/luxusmode-preview.jpg" alt="Luxusmode Online Shop Preview" loading="lazy">
+                            <div class="card-overlay">
+                                <div class="overlay-content">
+                                    <div class="project-icon pulse">
+                                        <svg viewBox="0 0 64 64" fill="currentColor">
+                                            <path d="M8 12h48v8H8v-8zm0 12h48v28H8V24zm4 4v20h40V28H12zm8 4h24v4H20v-4zm0 8h16v4H20v-4z"/>
+                                        </svg>
                                     </div>
+                                    <h3>Luxusmode Online</h3>
+                                    <p>Premium E-Commerce Plattform</p>
+                                    <div class="project-tags">
+                                        <span class="tag">E-Commerce</span>
+                                        <span class="tag">Shopify Plus</span>
+                                    </div>
+                                    <a href="#project-detail-1" class="btn-secondary view-project">Details ansehen</a>
                                 </div>
                             </div>
-                            <div class="portfolio-info">
-                                <h3>Luxusmode Online</h3>
-                                <div class="project-tags">
-                                    <span class="tag">E-Commerce</span>
-                                    <span class="tag">Shopify Plus</span>
-                                    <span class="tag">Custom Theme</span>
-                                </div>
-                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3>Luxusmode Online</h3>
+                            <p>High-End Fashion E-Commerce mit AR Try-On</p>
                         </div>
                     </article>
                     
                     <!-- Project 2 -->
-                    <article class="portfolio-item" data-category="web" data-aos="fade-up" data-aos-delay="100" id="project-2">
-                        <div class="portfolio-card">
-                            <div class="portfolio-image-wrapper">
-                                <img src="/assets/images/portfolio/tech-innovators-preview.jpg" alt="Tech Innovators Website Preview" loading="lazy">
-                                <div class="portfolio-overlay">
-                                    <div class="overlay-content">
-                                        <h3>Tech Innovators</h3>
-                                        <p>Corporate Website & Portal</p>
-                                        <a href="#project-detail-2" class="btn-secondary view-project">Projekt ansehen</a>
+                    <article class="portfolio-card" data-category="web" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card-image">
+                            <img src="/assets/images/portfolio/tech-innovators-preview.jpg" alt="Tech Innovators Website Preview" loading="lazy">
+                            <div class="card-overlay">
+                                <div class="overlay-content">
+                                    <div class="project-icon pulse">
+                                        <svg viewBox="0 0 64 64" fill="currentColor">
+                                            <path d="M32 4C16.536 4 4 16.536 4 32s12.536 28 28 28 28-12.536 28-28S47.464 4 32 4zm0 4c13.255 0 24 10.745 24 24s-10.745 24-24 24S8 45.255 8 32 18.745 8 32 8zm0 8c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16-7.163-16-16-16zm0 4c6.627 0 12 5.373 12 12s-5.373 12-12 12-12-5.373-12-12 5.373-12 12-12z"/>
+                                        </svg>
                                     </div>
+                                    <h3>Tech Innovators</h3>
+                                    <p>Corporate Website & Portal</p>
+                                    <div class="project-tags">
+                                        <span class="tag">Corporate</span>
+                                        <span class="tag">React</span>
+                                    </div>
+                                    <a href="#project-detail-2" class="btn-secondary view-project">Details ansehen</a>
                                 </div>
                             </div>
-                            <div class="portfolio-info">
-                                <h3>Tech Innovators</h3>
-                                <div class="project-tags">
-                                    <span class="tag">Corporate</span>
-                                    <span class="tag">React</span>
-                                    <span class="tag">Headless CMS</span>
-                                </div>
-                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3>Tech Innovators</h3>
+                            <p>Moderne Corporate Website mit Kundenportal</p>
                         </div>
                     </article>
                     
                     <!-- Project 3 -->
-                    <article class="portfolio-item" data-category="app" data-aos="fade-up" data-aos-delay="200" id="project-3">
-                        <div class="portfolio-card">
-                            <div class="portfolio-image-wrapper">
-                                <img src="/assets/images/portfolio/fitlife-pro-preview.jpg" alt="FitLife Pro App Preview" loading="lazy">
-                                <div class="portfolio-overlay">
-                                    <div class="overlay-content">
-                                        <h3>FitLife Pro</h3>
-                                        <p>Progressive Web App</p>
-                                        <a href="#project-detail-3" class="btn-secondary view-project">Projekt ansehen</a>
+                    <article class="portfolio-card" data-category="app" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card-image">
+                            <img src="/assets/images/portfolio/fitlife-pro-preview.jpg" alt="FitLife Pro App Preview" loading="lazy">
+                            <div class="card-overlay">
+                                <div class="overlay-content">
+                                    <div class="project-icon pulse">
+                                        <svg viewBox="0 0 64 64" fill="currentColor">
+                                            <path d="M32 4l24 16v24L32 60 8 44V20L32 4zm0 5.66L12 22.04v19.92L32 54.34l20-12.38V22.04L32 9.66zm0 10.34c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 4c4.418 0 8 3.582 8 8s-3.582 8-8 8-8-3.582-8-8 3.582-8 8-8z"/>
+                                        </svg>
                                     </div>
+                                    <h3>FitLife Pro</h3>
+                                    <p>Progressive Web App</p>
+                                    <div class="project-tags">
+                                        <span class="tag">PWA</span>
+                                        <span class="tag">Vue.js</span>
+                                    </div>
+                                    <a href="#project-detail-3" class="btn-secondary view-project">Details ansehen</a>
                                 </div>
                             </div>
-                            <div class="portfolio-info">
-                                <h3>FitLife Pro</h3>
-                                <div class="project-tags">
-                                    <span class="tag">PWA</span>
-                                    <span class="tag">Vue.js</span>
-                                    <span class="tag">Fitness Tech</span>
-                                </div>
-                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3>FitLife Pro</h3>
+                            <p>Fitness-Tracking PWA mit KI-Coach</p>
                         </div>
                     </article>
                     
                     <!-- Project 4 -->
-                    <article class="portfolio-item" data-category="design" data-aos="fade-up" id="project-4">
-                        <div class="portfolio-card">
-                            <div class="portfolio-image-wrapper">
-                                <img src="/assets/images/portfolio/artgallery-preview.jpg" alt="Art Gallery Online Preview" loading="lazy">
-                                <div class="portfolio-overlay">
-                                    <div class="overlay-content">
-                                        <h3>Art Gallery Online</h3>
-                                        <p>Digitale Kunstgalerie</p>
-                                        <a href="#project-detail-4" class="btn-secondary view-project">Projekt ansehen</a>
+                    <article class="portfolio-card" data-category="design" data-aos="fade-up">
+                        <div class="card-image">
+                            <img src="/assets/images/portfolio/artgallery-preview.jpg" alt="Art Gallery Online Preview" loading="lazy">
+                            <div class="card-overlay">
+                                <div class="overlay-content">
+                                    <div class="project-icon pulse">
+                                        <svg viewBox="0 0 64 64" fill="currentColor">
+                                            <path d="M8 40c0-13.255 10.745-24 24-24s24 10.745 24 24h-4c0-11.046-8.954-20-20-20s-20 8.954-20 20H8zm8 0c0-8.837 7.163-16 16-16s16 7.163 16 16h-4c0-6.627-5.373-12-12-12s-12 5.373-12 12h-4zm8 0c0-4.418 3.582-8 8-8s8 3.582 8 8h-4c0-2.209-1.791-4-4-4s-4 1.791-4 4h-4z"/>
+                                        </svg>
                                     </div>
+                                    <h3>Art Gallery Online</h3>
+                                    <p>Digitale Kunstgalerie</p>
+                                    <div class="project-tags">
+                                        <span class="tag">UX Design</span>
+                                        <span class="tag">WebGL</span>
+                                    </div>
+                                    <a href="#project-detail-4" class="btn-secondary view-project">Details ansehen</a>
                                 </div>
                             </div>
-                            <div class="portfolio-info">
-                                <h3>Art Gallery Online</h3>
-                                <div class="project-tags">
-                                    <span class="tag">UX Design</span>
-                                    <span class="tag">3D Gallery</span>
-                                    <span class="tag">WebGL</span>
-                                </div>
-                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3>Art Gallery Online</h3>
+                            <p>3D Kunstgalerie mit Virtual Reality</p>
                         </div>
                     </article>
                     
                     <!-- Project 5 -->
-                    <article class="portfolio-item" data-category="ecommerce" data-aos="fade-up" data-aos-delay="100" id="project-5">
-                        <div class="portfolio-card">
-                            <div class="portfolio-image-wrapper">
-                                <img src="/assets/images/portfolio/foodmarket-preview.jpg" alt="FoodMarket Plattform Preview" loading="lazy">
-                                <div class="portfolio-overlay">
-                                    <div class="overlay-content">
-                                        <h3>FoodMarket 24</h3>
-                                        <p>Multi-Vendor Marketplace</p>
-                                        <a href="#project-detail-5" class="btn-secondary view-project">Projekt ansehen</a>
+                    <article class="portfolio-card" data-category="ecommerce" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card-image">
+                            <img src="/assets/images/portfolio/foodmarket-preview.jpg" alt="FoodMarket Plattform Preview" loading="lazy">
+                            <div class="card-overlay">
+                                <div class="overlay-content">
+                                    <div class="project-icon pulse">
+                                        <svg viewBox="0 0 64 64" fill="currentColor">
+                                            <path d="M52 16H12c-2.21 0-4 1.79-4 4v24c0 2.21 1.79 4 4 4h40c2.21 0 4-1.79 4-4V20c0-2.21-1.79-4-4-4zm0 4v4H12v-4h40zM12 44V32h40v12H12zm4-8h8v4h-8v-4zm12 0h12v4H28v-4z"/>
+                                        </svg>
                                     </div>
+                                    <h3>FoodMarket 24</h3>
+                                    <p>Multi-Vendor Marketplace</p>
+                                    <div class="project-tags">
+                                        <span class="tag">Marketplace</span>
+                                        <span class="tag">WooCommerce</span>
+                                    </div>
+                                    <a href="#project-detail-5" class="btn-secondary view-project">Details ansehen</a>
                                 </div>
                             </div>
-                            <div class="portfolio-info">
-                                <h3>FoodMarket 24</h3>
-                                <div class="project-tags">
-                                    <span class="tag">Marketplace</span>
-                                    <span class="tag">WooCommerce</span>
-                                    <span class="tag">Multi-Vendor</span>
-                                </div>
-                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3>FoodMarket 24</h3>
+                            <p>Lebensmittel-Lieferplattform mit Express-Delivery</p>
                         </div>
                     </article>
                     
                     <!-- Project 6 -->
-                    <article class="portfolio-item" data-category="web" data-aos="fade-up" data-aos-delay="200" id="project-6">
-                        <div class="portfolio-card">
-                            <div class="portfolio-image-wrapper">
-                                <img src="/assets/images/portfolio/lawfirm-preview.jpg" alt="Kanzlei Website Preview" loading="lazy">
-                                <div class="portfolio-overlay">
-                                    <div class="overlay-content">
-                                        <h3>Kanzlei Müller & Partner</h3>
-                                        <p>Professionelle Kanzlei-Website</p>
-                                        <a href="#project-detail-6" class="btn-secondary view-project">Projekt ansehen</a>
+                    <article class="portfolio-card" data-category="web" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card-image">
+                            <img src="/assets/images/portfolio/lawfirm-preview.jpg" alt="Kanzlei Website Preview" loading="lazy">
+                            <div class="card-overlay">
+                                <div class="overlay-content">
+                                    <div class="project-icon pulse">
+                                        <svg viewBox="0 0 64 64" fill="currentColor">
+                                            <path d="M32 8l20 8v20c0 11.046-8.954 20-20 20s-20-8.954-20-20V12l20-8zm0 4.8L16 15.2v16.8c0 8.837 7.163 16 16 16s16-7.163 16-16V15.2L32 8.8zM28 24l-6 6 3 3 3-3 8 8 3-3-11-11z"/>
+                                        </svg>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="portfolio-info">
-                                <h3>Kanzlei Müller & Partner</h3>
-                                <div class="project-tags">
-                                    <span class="tag">Corporate</span>
-                                    <span class="tag">WordPress</span>
-                                    <span class="tag">SEO</span>
+                                    <h3>Kanzlei Müller & Partner</h3>
+                                    <p>Professionelle Kanzlei-Website</p>
+                                    <div class="project-tags">
+                                        <span class="tag">Corporate</span>
+                                        <span class="tag">SEO</span>
+                                    </div>
+                                    <a href="#project-detail-6" class="btn-secondary view-project">Details ansehen</a>
                                 </div>
                             </div>
                         </div>
-                    </article>
-                    
-                    <!-- Project 7 -->
-                    <article class="portfolio-item" data-category="app" data-aos="fade-up" id="project-7">
-                        <div class="portfolio-card">
-                            <div class="portfolio-image-wrapper">
-                                <img src="/assets/images/portfolio/edulearn-preview.jpg" alt="EduLearn Platform Preview" loading="lazy">
-                                <div class="portfolio-overlay">
-                                    <div class="overlay-content">
-                                        <h3>EduLearn Platform</h3>
-                                        <p>E-Learning Portal</p>
-                                        <a href="#project-detail-7" class="btn-secondary view-project">Projekt ansehen</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="portfolio-info">
-                                <h3>EduLearn Platform</h3>
-                                <div class="project-tags">
-                                    <span class="tag">E-Learning</span>
-                                    <span class="tag">React</span>
-                                    <span class="tag">Node.js</span>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    
-                    <!-- Project 8 -->
-                    <article class="portfolio-item" data-category="design" data-aos="fade-up" data-aos-delay="100" id="project-8">
-                        <div class="portfolio-card">
-                            <div class="portfolio-image-wrapper">
-                                <img src="/assets/images/portfolio/realestate-preview.jpg" alt="Real Estate Portal Preview" loading="lazy">
-                                <div class="portfolio-overlay">
-                                    <div class="overlay-content">
-                                        <h3>Immobilien Portal</h3>
-                                        <p>Modernes Immobilienportal</p>
-                                        <a href="#project-detail-8" class="btn-secondary view-project">Projekt ansehen</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="portfolio-info">
-                                <h3>Immobilien Portal</h3>
-                                <div class="project-tags">
-                                    <span class="tag">Portal</span>
-                                    <span class="tag">Laravel</span>
-                                    <span class="tag">Vue.js</span>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    
-                    <!-- Project 9 -->
-                    <article class="portfolio-item" data-category="ecommerce" data-aos="fade-up" data-aos-delay="200" id="project-9">
-                        <div class="portfolio-card">
-                            <div class="portfolio-image-wrapper">
-                                <img src="/assets/images/portfolio/beautyshop-preview.jpg" alt="Beauty Shop Preview" loading="lazy">
-                                <div class="portfolio-overlay">
-                                    <div class="overlay-content">
-                                        <h3>Beauty Essentials</h3>
-                                        <p>Kosmetik Online-Shop</p>
-                                        <a href="#project-detail-9" class="btn-secondary view-project">Projekt ansehen</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="portfolio-info">
-                                <h3>Beauty Essentials</h3>
-                                <div class="project-tags">
-                                    <span class="tag">E-Commerce</span>
-                                    <span class="tag">Magento</span>
-                                    <span class="tag">B2C</span>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    
-                    <!-- Project 10 -->
-                    <article class="portfolio-item" data-category="web" data-aos="fade-up" id="project-10">
-                        <div class="portfolio-card">
-                            <div class="portfolio-image-wrapper">
-                                <img src="/assets/images/portfolio/startup-preview.jpg" alt="Startup Landing Page Preview" loading="lazy">
-                                <div class="portfolio-overlay">
-                                    <div class="overlay-content">
-                                        <h3>TechStart Berlin</h3>
-                                        <p>Startup Landing Page</p>
-                                        <a href="#project-detail-10" class="btn-secondary view-project">Projekt ansehen</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="portfolio-info">
-                                <h3>TechStart Berlin</h3>
-                                <div class="project-tags">
-                                    <span class="tag">Landing Page</span>
-                                    <span class="tag">Next.js</span>
-                                    <span class="tag">Animation</span>
-                                </div>
-                            </div>
+                        <div class="card-info">
+                            <h3>Kanzlei Müller & Partner</h3>
+                            <p>Moderne Anwaltskanzlei Website mit Mandantenportal</p>
                         </div>
                     </article>
                 </div>
             </div>
         </section>
         
-        <!-- Project Details Modal Template -->
+        <!-- Project Details Modal -->
         <div class="project-modal" id="project-detail-1" role="dialog" aria-labelledby="modal-title-1" aria-hidden="true">
             <div class="modal-content">
                 <button class="modal-close" aria-label="Schließen">&times;</button>
@@ -377,24 +321,51 @@
                         <img src="/assets/images/portfolio/luxusmode-full.jpg" alt="Luxusmode Online Vollansicht">
                     </div>
                     <div class="project-details">
-                        <h2 id="modal-title-1">Luxusmode Online</h2>
+                        <h2 id="modal-title-1" class="modal-title">Luxusmode Online</h2>
                         <div class="project-meta">
-                            <span class="meta-item"><strong>Kunde:</strong> Luxusmode GmbH</span>
-                            <span class="meta-item"><strong>Jahr:</strong> 2024</span>
-                            <span class="meta-item"><strong>Dauer:</strong> 4 Monate</span>
+                            <div class="meta-item">
+                                <div class="meta-icon pulse">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                    </svg>
+                                </div>
+                                <div class="meta-content">
+                                    <strong>Kunde:</strong> Luxusmode GmbH
+                                </div>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-icon pulse">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+                                    </svg>
+                                </div>
+                                <div class="meta-content">
+                                    <strong>Jahr:</strong> 2024
+                                </div>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-icon pulse">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                                    </svg>
+                                </div>
+                                <div class="meta-content">
+                                    <strong>Dauer:</strong> 4 Monate
+                                </div>
+                            </div>
                         </div>
                         
-                        <div class="project-section">
+                        <div class="detail-section">
                             <h3>Die Herausforderung</h3>
                             <p>Luxusmode benötigte eine hochwertige E-Commerce-Plattform, die das Premium-Segment perfekt bedient. Die Herausforderung bestand darin, ein einzigartiges Shopping-Erlebnis zu schaffen, das die Exklusivität der Marke widerspiegelt.</p>
                         </div>
                         
-                        <div class="project-section">
+                        <div class="detail-section">
                             <h3>Unsere Lösung</h3>
                             <p>Wir entwickelten eine maßgeschneiderte Shopify Plus Lösung mit individuellem Theme, das durch elegantes Design und innovative Features überzeugt. Virtual Try-On Technologie und personalisierte Produktempfehlungen sorgen für ein außergewöhnliches Einkaufserlebnis.</p>
                         </div>
                         
-                        <div class="project-section">
+                        <div class="detail-section">
                             <h3>Verwendete Technologien</h3>
                             <div class="tech-stack">
                                 <span class="tech-item">Shopify Plus</span>
@@ -405,22 +376,42 @@
                             </div>
                         </div>
                         
-                        <div class="project-section">
+                        <div class="detail-section">
                             <h3>Ergebnisse</h3>
                             <div class="results-grid">
-                                <div class="result-item">
+                                <div class="result-card">
+                                    <div class="result-icon pulse">
+                                        <svg viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/>
+                                        </svg>
+                                    </div>
                                     <div class="result-number">+250%</div>
                                     <div class="result-label">Conversion Rate</div>
                                 </div>
-                                <div class="result-item">
+                                <div class="result-card">
+                                    <div class="result-icon pulse">
+                                        <svg viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/>
+                                        </svg>
+                                    </div>
                                     <div class="result-number">+180%</div>
                                     <div class="result-label">Mobile Sales</div>
                                 </div>
-                                <div class="result-item">
+                                <div class="result-card">
+                                    <div class="result-icon pulse">
+                                        <svg viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+                                        </svg>
+                                    </div>
                                     <div class="result-number">-45%</div>
                                     <div class="result-label">Bounce Rate</div>
                                 </div>
-                                <div class="result-item">
+                                <div class="result-card">
+                                    <div class="result-icon pulse">
+                                        <svg viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                                        </svg>
+                                    </div>
                                     <div class="result-number">0.8s</div>
                                     <div class="result-label">Ladezeit</div>
                                 </div>
@@ -436,95 +427,153 @@
             </div>
         </div>
         
-        <!-- Success Stats -->
-        <section class="success-stats" aria-labelledby="stats-heading">
+        <!-- Success Stats Section -->
+        <section class="stats-section" aria-labelledby="stats-heading">
             <div class="container">
-                <h2 id="stats-heading" class="section-title text-center">Unsere Erfolge in Zahlen</h2>
+                <div class="section-header">
+                    <h2 id="stats-heading" class="section-title">
+                        <span class="title-number">02</span>
+                        Unsere Erfolge in Zahlen
+                    </h2>
+                    <p class="section-lead">Messbare Ergebnisse die überzeugen</p>
+                </div>
                 
                 <div class="stats-grid">
-                    <div class="stat-item" data-aos="zoom-in">
-                        <div class="stat-number" data-count="150">0</div>
-                        <div class="stat-label">Erfolgreiche Projekte</div>
+                    <div class="stat-card" data-aos="zoom-in">
+                        <div class="stat-icon pulse">
+                            <svg viewBox="0 0 64 64" fill="currentColor">
+                                <path d="M32 4l7.486 22.528h23.514l-19.007 13.944 7.486 22.528-19.479-14.236-19.479 14.236 7.486-22.528-19.007-13.944h23.514z"/>
+                            </svg>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-number" data-count="150">0</div>
+                            <div class="stat-label">Erfolgreiche Projekte</div>
+                        </div>
                     </div>
-                    <div class="stat-item" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="stat-number" data-count="98">0</div>
-                        <div class="stat-suffix">%</div>
-                        <div class="stat-label">Kundenzufriedenheit</div>
+                    
+                    <div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="stat-icon pulse">
+                            <svg viewBox="0 0 64 64" fill="currentColor">
+                                <path d="M32 2C15.432 2 2 15.432 2 32s13.432 30 30 30 30-13.432 30-30S48.568 2 32 2zm12.732 23.732l-16 16a2 2 0 01-2.828 0l-8-8a2 2 0 112.828-2.828l6.586 6.586 14.586-14.586a2 2 0 112.828 2.828z"/>
+                            </svg>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-number" data-count="98">0</div>
+                            <div class="stat-suffix">%</div>
+                            <div class="stat-label">Kundenzufriedenheit</div>
+                        </div>
                     </div>
-                    <div class="stat-item" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="stat-number" data-count="45">0</div>
-                        <div class="stat-suffix">M+</div>
-                        <div class="stat-label">Generierte Umsätze</div>
+                    
+                    <div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="stat-icon pulse">
+                            <svg viewBox="0 0 64 64" fill="currentColor">
+                                <path d="M32 2C15.432 2 2 15.432 2 32s13.432 30 30 30 30-13.432 30-30S48.568 2 32 2zm0 54C18.767 56 8 45.233 8 32S18.767 8 32 8s24 10.767 24 24-10.767 24-24 24zm2.293-30.707a2 2 0 00-2.586-.107l-.107.107-6 6a2 2 0 002.707 2.936l.093-.083L31 32.585V40a2 2 0 003.993.166L35 40V32.414l2.293 2.293a2 2 0 002.936-.093l.083-.093a2 2 0 00-.083-2.729l-.093-.085-6-6z"/>
+                            </svg>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-number" data-count="45">0</div>
+                            <div class="stat-suffix">M+</div>
+                            <div class="stat-label">Generierte Umsätze</div>
+                        </div>
                     </div>
-                    <div class="stat-item" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="stat-number" data-count="12">0</div>
-                        <div class="stat-label">Awards & Auszeichnungen</div>
+                    
+                    <div class="stat-card" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="stat-icon pulse">
+                            <svg viewBox="0 0 64 64" fill="currentColor">
+                                <path d="M32 12c-11.046 0-20 8.954-20 20s8.954 20 20 20 20-8.954 20-20-8.954-20-20-20zm0 4c8.837 0 16 7.163 16 16s-7.163 16-16 16-16-7.163-16-16 7.163-16 16-16zm-8 14h16v4H24v-4z"/>
+                            </svg>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-number" data-count="12">0</div>
+                            <div class="stat-label">Awards & Auszeichnungen</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
         
-        <!-- Client Testimonials -->
-        <section class="testimonials" aria-labelledby="testimonials-heading">
+        <!-- Client Testimonials Section -->
+        <section class="testimonials-section" aria-labelledby="testimonials-heading">
             <div class="container">
-                <h2 id="testimonials-heading" class="section-title text-center">Was unsere Kunden sagen</h2>
+                <div class="section-header">
+                    <h2 id="testimonials-heading" class="section-title">
+                        <span class="title-number">03</span>
+                        Was unsere Kunden sagen
+                    </h2>
+                    <p class="section-lead">Echtes Feedback von echten Erfolgsgeschichten</p>
+                </div>
                 
                 <div class="testimonials-slider">
-                    <div class="testimonial-item active">
-                        <div class="testimonial-content">
-                            <div class="quote-icon">"</div>
-                            <p>MAWA Prime Digital hat unsere Vision perfekt umgesetzt. Die neue E-Commerce-Plattform übertrifft alle Erwartungen und unsere Verkäufe haben sich verdreifacht.</p>
-                            <div class="testimonial-author">
-                                <img src="/assets/images/testimonials/client-1.jpg" alt="Sarah Müller">
-                                <div class="author-info">
-                                    <h4>Sarah Müller</h4>
-                                    <p>CEO, Luxusmode GmbH</p>
-                                </div>
+                    <div class="testimonial-card active" data-aos="fade-up">
+                        <div class="testimonial-icon pulse">
+                            <svg viewBox="0 0 64 64" fill="currentColor">
+                                <path d="M12 28c0-8.837 7.163-16 16-16v-8C15.85 4 4 15.85 4 28c0 8.284 3.435 14.91 8.258 18.643C10.84 44.816 10 42.532 10 40c0-6.627 5.373-12 12-12h8v24h-8c-12.15 0-20-11.85-20-24zm32 0c0-8.837 7.163-16 16-16v-8c-12.15 0-24 11.85-24 24 0 8.284 3.435 14.91 8.258 18.643C42.84 44.816 42 42.532 42 40c0-6.627 5.373-12 12-12h8v24h-8c-12.15 0-20-11.85-20-24z"/>
+                            </svg>
+                        </div>
+                        <p class="testimonial-text">MAWA Prime Digital hat unsere Vision perfekt umgesetzt. Die neue E-Commerce-Plattform übertrifft alle Erwartungen und unsere Verkäufe haben sich verdreifacht.</p>
+                        <div class="testimonial-author">
+                            <img src="/assets/images/testimonials/client-1.jpg" alt="Sarah Müller" class="author-image">
+                            <div class="author-info">
+                                <h4>Sarah Müller</h4>
+                                <p>CEO, Luxusmode GmbH</p>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="testimonial-item">
-                        <div class="testimonial-content">
-                            <div class="quote-icon">"</div>
-                            <p>Die Zusammenarbeit war außergewöhnlich. Professionell, kreativ und immer mit dem Fokus auf unseren Geschäftserfolg. Absolute Empfehlung!</p>
-                            <div class="testimonial-author">
-                                <img src="/assets/images/testimonials/client-2.jpg" alt="Thomas Schmidt">
-                                <div class="author-info">
-                                    <h4>Thomas Schmidt</h4>
-                                    <p>Founder, Tech Innovators</p>
-                                </div>
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="testimonial-icon pulse">
+                            <svg viewBox="0 0 64 64" fill="currentColor">
+                                <path d="M12 28c0-8.837 7.163-16 16-16v-8C15.85 4 4 15.85 4 28c0 8.284 3.435 14.91 8.258 18.643C10.84 44.816 10 42.532 10 40c0-6.627 5.373-12 12-12h8v24h-8c-12.15 0-20-11.85-20-24zm32 0c0-8.837 7.163-16 16-16v-8c-12.15 0-24 11.85-24 24 0 8.284 3.435 14.91 8.258 18.643C42.84 44.816 42 42.532 42 40c0-6.627 5.373-12 12-12h8v24h-8c-12.15 0-20-11.85-20-24z"/>
+                            </svg>
+                        </div>
+                        <p class="testimonial-text">Die Zusammenarbeit war außergewöhnlich. Professionell, kreativ und immer mit dem Fokus auf unseren Geschäftserfolg. Absolute Empfehlung!</p>
+                        <div class="testimonial-author">
+                            <img src="/assets/images/testimonials/client-2.jpg" alt="Thomas Schmidt" class="author-image">
+                            <div class="author-info">
+                                <h4>Thomas Schmidt</h4>
+                                <p>Founder, Tech Innovators</p>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="testimonial-item">
-                        <div class="testimonial-content">
-                            <div class="quote-icon">"</div>
-                            <p>Unsere neue PWA ist ein Game-Changer. Die User lieben sie und unsere Engagement-Raten sind durch die Decke gegangen. Danke MAWA!</p>
-                            <div class="testimonial-author">
-                                <img src="/assets/images/testimonials/client-3.jpg" alt="Lisa Wagner">
-                                <div class="author-info">
-                                    <h4>Lisa Wagner</h4>
-                                    <p>Product Manager, FitLife Pro</p>
-                                </div>
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="testimonial-icon pulse">
+                            <svg viewBox="0 0 64 64" fill="currentColor">
+                                <path d="M12 28c0-8.837 7.163-16 16-16v-8C15.85 4 4 15.85 4 28c0 8.284 3.435 14.91 8.258 18.643C10.84 44.816 10 42.532 10 40c0-6.627 5.373-12 12-12h8v24h-8c-12.15 0-20-11.85-20-24zm32 0c0-8.837 7.163-16 16-16v-8c-12.15 0-24 11.85-24 24 0 8.284 3.435 14.91 8.258 18.643C42.84 44.816 42 42.532 42 40c0-6.627 5.373-12 12-12h8v24h-8c-12.15 0-20-11.85-20-24z"/>
+                            </svg>
+                        </div>
+                        <p class="testimonial-text">Unsere neue PWA ist ein Game-Changer. Die User lieben sie und unsere Engagement-Raten sind durch die Decke gegangen. Danke MAWA!</p>
+                        <div class="testimonial-author">
+                            <img src="/assets/images/testimonials/client-3.jpg" alt="Lisa Wagner" class="author-image">
+                            <div class="author-info">
+                                <h4>Lisa Wagner</h4>
+                                <p>Product Manager, FitLife Pro</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="testimonial-nav">
-                    <button class="nav-btn prev" aria-label="Vorheriges Testimonial">←</button>
-                    <button class="nav-btn next" aria-label="Nächstes Testimonial">→</button>
+                    <button class="nav-btn prev" aria-label="Vorheriges Testimonial">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                        </svg>
+                    </button>
+                    <button class="nav-btn next" aria-label="Nächstes Testimonial">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </section>
         
         <!-- CTA Section -->
         <section class="cta-section gradient-bg" aria-labelledby="cta-heading">
+            <div class="particle-background" id="cta-particles"></div>
             <div class="container">
                 <div class="cta-content text-center">
-                    <h2 id="cta-heading" class="cta-title">Lassen Sie uns Ihr nächstes Projekt gemeinsam verwirklichen</h2>
+                    <h2 id="cta-heading" class="cta-title glitch-text" data-text="Lassen Sie uns Ihr nächstes Projekt gemeinsam verwirklichen">Lassen Sie uns Ihr nächstes Projekt gemeinsam verwirklichen</h2>
                     <p class="cta-text">Werden Sie Teil unserer Erfolgsgeschichten</p>
                     <a href="/pages/kontakt.html" class="btn-primary btn-large magic-button">
                         <span class="button-text">Projekt besprechen</span>
@@ -600,5 +649,6 @@
     <script src="/js/animations.js" defer></script>
     <script src="/js/smooth-scroll.js" defer></script>
     <script src="/js/cookie-consent.js" defer></script>
+    <script src="/js/portfolio.js" defer></script>
 </body>
 </html>
