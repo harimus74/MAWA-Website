@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/animations.css">
     <link rel="stylesheet" href="/css/responsive.css">
+    <link rel="stylesheet" href="/css/about.css">
     
     <!-- Schema.org Organization Markup -->
     <script type="application/ld+json">
@@ -39,7 +40,7 @@
         "url": "https://www.mawa-prime-digital.at",
         "logo": "https://www.mawa-prime-digital.at/assets/images/logo/logo.png",
         "description": "Premium Webagentur für außergewöhnliche digitale Lösungen",
-        "foundingDate": "2025",
+        "foundingDate": "2019",
         "founders": [
             {
                 "@type": "Person",
@@ -64,6 +65,18 @@
 <body class="about-page">
     <!-- Skip to Content -->
     <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
+    
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" class="cookie-banner" role="region" aria-label="Cookie-Einstellungen">
+        <div class="cookie-content">
+            <p>Wir verwenden Cookies, um Ihre Erfahrung zu verbessern. Durch die Nutzung unserer Website stimmen Sie unserer <a href="/pages/datenschutz.html">Datenschutzerklärung</a> zu.</p>
+            <div class="cookie-buttons">
+                <button id="accept-cookies" class="btn-primary">Alle akzeptieren</button>
+                <button id="reject-cookies" class="btn-secondary">Nur notwendige</button>
+                <button id="cookie-settings" class="btn-ghost">Einstellungen</button>
+            </div>
+        </div>
+    </div>
     
     <!-- Header -->
     <header class="main-header" role="banner">
@@ -93,115 +106,255 @@
     
     <!-- Main Content -->
     <main id="main-content" role="main">
-        <!-- Page Hero -->
+        <!-- Enhanced Hero Section with Services Style -->
         <section class="page-hero about-hero" aria-labelledby="page-title">
+            <div class="particle-background" id="particles"></div>
             <div class="hero-background">
-                <div class="animated-gradient"></div>
-                <div class="floating-shapes">
-                    <div class="shape shape-1"></div>
-                    <div class="shape shape-2"></div>
-                    <div class="shape shape-3"></div>
-                </div>
+                <div class="stars-background"></div>
             </div>
             <div class="container">
                 <div class="hero-content">
-                    <h1 id="page-title" class="page-title glitch-text">Über uns</h1>
-                    <p class="page-subtitle">Innovation trifft Leidenschaft</p>
+                    <h1 id="page-title" class="page-title">
+                        <div style="display: block; color: #8B5CF6; font-weight: 900; text-shadow: 0 0 30px rgba(139, 92, 246, 0.8), 0 0 60px rgba(139, 92, 246, 0.6), 0 0 90px rgba(139, 92, 246, 0.4); animation: fadeInUp 1s ease forwards, pulseGlow 3s ease-in-out infinite;">ÜBER</div>
+                        <div style="display: block; color: #00D9FF; font-weight: 900; text-shadow: 0 0 30px rgba(0, 217, 255, 0.8), 0 0 60px rgba(0, 217, 255, 0.6), 0 0 90px rgba(0, 217, 255, 0.4); animation: fadeInUp 1s ease 0.3s forwards, pulseGlow2 3s ease-in-out infinite; opacity: 0;">UNS</div>
+                    </h1>
+                    <p class="page-subtitle" style="animation: fadeInUp 1s ease 0.6s forwards; opacity: 0;">Innovation trifft Leidenschaft</p>
                 </div>
+            </div>
+            <div class="hero-scroll-indicator">
+                <span class="scroll-text">Entdecken</span>
+                <div class="scroll-line"></div>
             </div>
         </section>
         
-        <!-- Company Story -->
-        <section class="company-story" aria-labelledby="story-heading">
+        <!-- About Navigation -->
+        <nav class="about-nav sticky-nav" aria-label="Über uns Navigation">
             <div class="container">
-                <div class="story-content">
-                    <div class="story-text" data-aos="fade-right">
-                        <h2 id="story-heading" class="section-title">Unsere Geschichte</h2>
-                        <p class="lead">MAWA Prime Digital wurde 2019 mit einer klaren Vision gegründet: Außergewöhnliche digitale Erlebnisse zu erschaffen, die Unternehmen transformieren.</p>
-                        <p>Was als kleine Agentur mit großen Träumen begann, hat sich zu einem führenden Partner für digitale Innovation entwickelt. Unser Erfolg basiert auf der perfekten Kombination aus technischer Exzellenz, kreativer Vision und einem tiefen Verständnis für die Bedürfnisse unserer Kunden.</p>
-                        <p>Heute sind wir stolz darauf, mit über 150 erfolgreichen Projekten und einem Team von 25+ Experten zu den Top-Agenturen in Deutschland zu gehören.</p>
-                        <div class="story-stats">
-                            <div class="stat">
-                                <div class="stat-number">2019</div>
+                <ul class="about-nav-list">
+                    <li><a href="#geschichte" class="nav-item">Geschichte</a></li>
+                    <li><a href="#mission" class="nav-item">Mission & Werte</a></li>
+                    <li><a href="#team" class="nav-item">Team</a></li>
+                    <li><a href="#prozess" class="nav-item">Arbeitsweise</a></li>
+                    <li><a href="#awards" class="nav-item">Auszeichnungen</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <!-- Company Story Section -->
+        <section id="geschichte" class="about-section" aria-labelledby="story-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="story-heading" class="section-title">
+                        <span class="title-number">01</span>
+                        Unsere Geschichte
+                    </h2>
+                    <p class="section-lead">Von der Vision zur digitalen Exzellenz</p>
+                </div>
+                
+                <div class="story-grid">
+                    <div class="story-content" data-aos="fade-right">
+                        <div class="story-card">
+                            <div class="card-icon">
+                                <div class="icon-wrapper pulse">
+                                    <svg viewBox="0 0 64 64" fill="currentColor">
+                                        <path d="M32 4l7.486 22.528h23.514l-19.007 13.944 7.486 22.528-19.479-14.236-19.479 14.236 7.486-22.528-19.007-13.944h23.514z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h3>Der Anfang</h3>
+                            <p>MAWA Prime Digital wurde 2019 mit einer klaren Vision gegründet: Außergewöhnliche digitale Erlebnisse zu erschaffen, die Unternehmen transformieren und Nutzer begeistern.</p>
+                            <p>Was als kleine Agentur mit großen Träumen begann, hat sich zu einem führenden Partner für digitale Innovation entwickelt.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="story-stats" data-aos="fade-left">
+                        <div class="stats-card">
+                            <div class="stat-item">
+                                <div class="stat-icon pulse">
+                                    <svg viewBox="0 0 64 64" fill="currentColor">
+                                        <path d="M32 12c-11.046 0-20 8.954-20 20s8.954 20 20 20 20-8.954 20-20-8.954-20-20-20zm0 4c8.837 0 16 7.163 16 16s-7.163 16-16 16-16-7.163-16-16 7.163-16 16-16zm-8 14h16v4H24v-4z"/>
+                                    </svg>
+                                </div>
+                                <div class="stat-value">2019</div>
                                 <div class="stat-label">Gegründet</div>
                             </div>
-                            <div class="stat">
-                                <div class="stat-number">150+</div>
-                                <div class="stat-label">Projekte</div>
+                            
+                            <div class="stat-item">
+                                <div class="stat-icon pulse">
+                                    <svg viewBox="0 0 64 64" fill="currentColor">
+                                        <path d="M32 4C16.536 4 4 16.536 4 32s12.536 28 28 28 28-12.536 28-28S47.464 4 32 4zm0 4c13.255 0 24 10.745 24 24s-10.745 24-24 24S8 45.255 8 32 18.745 8 32 8zm0 8c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16-7.163-16-16-16z"/>
+                                    </svg>
+                                </div>
+                                <div class="stat-value">150+</div>
+                                <div class="stat-label">Erfolgreiche Projekte</div>
                             </div>
-                            <div class="stat">
-                                <div class="stat-number">25+</div>
-                                <div class="stat-label">Experten</div>
+                            
+                            <div class="stat-item">
+                                <div class="stat-icon pulse">
+                                    <svg viewBox="0 0 64 64" fill="currentColor">
+                                        <path d="M32 8C18.745 8 8 18.745 8 32s10.745 24 24 24 24-10.745 24-24S45.255 8 32 8zm0 4c11.046 0 20 8.954 20 20s-8.954 20-20 20-20-8.954-20-20 8.954-20 20-20zm-8 8v16l12 8 4-6-10-6V20h-6z"/>
+                                    </svg>
+                                </div>
+                                <div class="stat-value">25+</div>
+                                <div class="stat-label">Team-Mitglieder</div>
+                            </div>
+                            
+                            <div class="stat-item">
+                                <div class="stat-icon pulse">
+                                    <svg viewBox="0 0 64 64" fill="currentColor">
+                                        <path d="M32 2C15.432 2 2 15.432 2 32s13.432 30 30 30 30-13.432 30-30S48.568 2 32 2zm12.732 23.732l-16 16a2 2 0 01-2.828 0l-8-8a2 2 0 112.828-2.828l6.586 6.586 14.586-14.586a2 2 0 112.828 2.828z"/>
+                                    </svg>
+                                </div>
+                                <div class="stat-value">98%</div>
+                                <div class="stat-label">Kundenzufriedenheit</div>
                             </div>
                         </div>
                     </div>
-                    <div class="story-visual" data-aos="fade-left">
-                        <div class="visual-container">
-                            <div class="animated-element element-1"></div>
-                            <div class="animated-element element-2"></div>
-                            <div class="animated-element element-3"></div>
-                            <img src="/assets/images/about/office.jpg" alt="MAWA Prime Digital Office" class="story-image">
+                    
+                    <div class="story-timeline full-width" data-aos="fade-up">
+                        <h3>Unser Weg</h3>
+                        <div class="timeline-track">
+                            <div class="timeline-point">
+                                <div class="point-year">2019</div>
+                                <div class="point-content">
+                                    <h4>Gründung</h4>
+                                    <p>Start mit 3 Gründern und großer Vision</p>
+                                </div>
+                            </div>
+                            <div class="timeline-point">
+                                <div class="point-year">2020</div>
+                                <div class="point-content">
+                                    <h4>Erste Erfolge</h4>
+                                    <p>25 Projekte erfolgreich umgesetzt</p>
+                                </div>
+                            </div>
+                            <div class="timeline-point">
+                                <div class="point-year">2022</div>
+                                <div class="point-content">
+                                    <h4>Expansion</h4>
+                                    <p>Team auf 15 Mitarbeiter gewachsen</p>
+                                </div>
+                            </div>
+                            <div class="timeline-point">
+                                <div class="point-year">2024</div>
+                                <div class="point-content">
+                                    <h4>Awards</h4>
+                                    <p>Mehrfach ausgezeichnete Agentur</p>
+                                </div>
+                            </div>
+                            <div class="timeline-point active">
+                                <div class="point-year">2025</div>
+                                <div class="point-content">
+                                    <h4>Heute</h4>
+                                    <p>Führende Digitalagentur mit 25+ Experten</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         
-        <!-- Mission & Values -->
-        <section class="mission-values" aria-labelledby="mission-heading">
+        <!-- Mission & Values Section -->
+        <section id="mission" class="about-section alt-bg" aria-labelledby="mission-heading">
             <div class="container">
-                <h2 id="mission-heading" class="section-title text-center">Unsere Mission & Werte</h2>
-                <p class="section-subtitle text-center">Was uns antreibt und ausmacht</p>
+                <div class="section-header">
+                    <h2 id="mission-heading" class="section-title">
+                        <span class="title-number">02</span>
+                        Mission & Werte
+                    </h2>
+                    <p class="section-lead">Was uns antreibt und ausmacht</p>
+                </div>
+                
+                <div class="mission-statement" data-aos="zoom-in">
+                    <div class="statement-card">
+                        <h3>Unsere Mission</h3>
+                        <p class="lead">Wir machen das Digitale menschlich, indem wir Technologie und Kreativität vereinen, um außergewöhnliche Erlebnisse zu schaffen, die Unternehmen transformieren und Menschen begeistern.</p>
+                    </div>
+                </div>
                 
                 <div class="values-grid">
-                    <div class="value-card" data-aos="flip-left">
-                        <div class="value-icon">
-                            <div class="icon-inner">
-                                <svg viewBox="0 0 64 64"><path d="M32 8l8 16 16 2-12 12 3 17-15-8-15 8 3-17L8 26l16-2z"/></svg>
+                    <article class="value-card" data-aos="fade-up">
+                        <div class="card-icon">
+                            <div class="icon-wrapper rotate">
+                                <svg viewBox="0 0 64 64" fill="currentColor">
+                                    <path d="M32 8l8 16 16 2-12 12 3 17-15-8-15 8 3-17L8 26l16-2z"/>
+                                </svg>
                             </div>
                         </div>
                         <h3>Exzellenz</h3>
-                        <p>Wir streben in allem was wir tun nach Perfektion und liefern nur die beste Qualität.</p>
-                    </div>
+                        <p>Wir streben in allem was wir tun nach Perfektion. Jedes Projekt erhält unsere volle Aufmerksamkeit und Expertise.</p>
+                        <ul class="feature-list">
+                            <li>Höchste Qualitätsstandards</li>
+                            <li>Kontinuierliche Verbesserung</li>
+                            <li>Best Practices</li>
+                        </ul>
+                    </article>
                     
-                    <div class="value-card" data-aos="flip-left" data-aos-delay="100">
-                        <div class="value-icon">
-                            <div class="icon-inner">
-                                <svg viewBox="0 0 64 64"><path d="M32 4a28 28 0 1 0 0 56 28 28 0 0 0 0-56zm0 8l4 12h12l-10 8 4 12-10-8-10 8 4-12-10-8h12z"/></svg>
+                    <article class="value-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card-icon">
+                            <div class="icon-wrapper bounce">
+                                <svg viewBox="0 0 64 64" fill="currentColor">
+                                    <path d="M32 4C16.536 4 4 16.536 4 32s12.536 28 28 28 28-12.536 28-28S47.464 4 32 4zm0 4c13.255 0 24 10.745 24 24s-10.745 24-24 24S8 45.255 8 32 18.745 8 32 8zm-8 20v8h8v8h8v-8h8v-8h-8v-8h-8v8h-8z"/>
+                                </svg>
                             </div>
                         </div>
                         <h3>Innovation</h3>
                         <p>Wir nutzen modernste Technologien und kreative Ansätze für zukunftsfähige Lösungen.</p>
-                    </div>
+                        <ul class="feature-list">
+                            <li>Cutting-Edge Technologien</li>
+                            <li>Kreative Problemlösung</li>
+                            <li>Zukunftsorientierung</li>
+                        </ul>
+                    </article>
                     
-                    <div class="value-card" data-aos="flip-left" data-aos-delay="200">
-                        <div class="value-icon">
-                            <div class="icon-inner">
-                                <svg viewBox="0 0 64 64"><path d="M32 12c-11 0-20 9-20 20s9 20 20 20 20-9 20-20-9-20-20-20zm8 8l-8 8-8-8h5v-8h6v8h5z"/></svg>
+                    <article class="value-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card-icon">
+                            <div class="icon-wrapper shake">
+                                <svg viewBox="0 0 64 64" fill="currentColor">
+                                    <path d="M48 20c0-8.837-7.163-16-16-16s-16 7.163-16 16c0 4.418 1.791 8.418 4.686 11.314L32 44l11.314-12.686C46.209 28.418 48 24.418 48 20zm-16 8c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z"/>
+                                </svg>
                             </div>
                         </div>
                         <h3>Partnerschaft</h3>
                         <p>Wir arbeiten eng mit unseren Kunden zusammen und verstehen uns als Teil ihres Teams.</p>
-                    </div>
+                        <ul class="feature-list">
+                            <li>Enge Zusammenarbeit</li>
+                            <li>Langfristige Beziehungen</li>
+                            <li>Gemeinsamer Erfolg</li>
+                        </ul>
+                    </article>
                     
-                    <div class="value-card" data-aos="flip-left" data-aos-delay="300">
-                        <div class="value-icon">
-                            <div class="icon-inner">
-                                <svg viewBox="0 0 64 64"><path d="M32 8v48M8 32h48M16 16l32 32M48 16L16 48"/></svg>
+                    <article class="value-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card-icon">
+                            <div class="icon-wrapper flip">
+                                <svg viewBox="0 0 64 64" fill="currentColor">
+                                    <path d="M32 8C18.745 8 8 18.745 8 32s10.745 24 24 24 24-10.745 24-24S45.255 8 32 8zm0 4c11.046 0 20 8.954 20 20s-8.954 20-20 20-20-8.954-20-20 8.954-20 20-20zm-8 8v16h16V20H24zm4 4h8v8h-8v-8z"/>
+                                </svg>
                             </div>
                         </div>
                         <h3>Transparenz</h3>
                         <p>Offene Kommunikation und ehrliche Beratung sind die Basis unserer Zusammenarbeit.</p>
-                    </div>
+                        <ul class="feature-list">
+                            <li>Klare Kommunikation</li>
+                            <li>Ehrliche Beratung</li>
+                            <li>Nachvollziehbare Prozesse</li>
+                        </ul>
+                    </article>
                 </div>
             </div>
         </section>
         
         <!-- Team Section -->
-        <section class="team-section" aria-labelledby="team-heading">
+        <section id="team" class="about-section" aria-labelledby="team-heading">
             <div class="container">
-                <h2 id="team-heading" class="section-title text-center">Unser Team</h2>
-                <p class="section-subtitle text-center">Die kreativen Köpfe hinter MAWA Prime Digital</p>
+                <div class="section-header">
+                    <h2 id="team-heading" class="section-title">
+                        <span class="title-number">03</span>
+                        Unser Team
+                    </h2>
+                    <p class="section-lead">Die kreativen Köpfe hinter MAWA Prime Digital</p>
+                </div>
                 
                 <div class="team-grid">
                     <!-- Team Member 1 -->
@@ -211,8 +364,12 @@
                                 <img src="/assets/images/team/max-wagner.jpg" alt="Max Wagner">
                                 <div class="member-overlay">
                                     <div class="social-links">
-                                        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
-                                        <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg></a>
+                                        <a href="#" aria-label="LinkedIn" class="social-icon">
+                                            <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                                        </a>
+                                        <a href="#" aria-label="Twitter" class="social-icon">
+                                            <svg viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -231,8 +388,12 @@
                                 <img src="/assets/images/team/anna-weber.jpg" alt="Anna Weber">
                                 <div class="member-overlay">
                                     <div class="social-links">
-                                        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
-                                        <a href="#" aria-label="Behance"><svg viewBox="0 0 24 24"><path d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 1.295.693 1.97 1.755 1.97.795 0 1.439-.176 1.994-.893l1.007.893zm-8.09-3.56h4.274c-.129-1.06-.729-1.878-1.925-1.878-1.25 0-1.875.885-2.349 1.878zM6.486 20.304c-1.827 0-3.286-.699-4.361-2.098C1.05 16.807.487 15.102.487 12.872c0-2.237.567-3.942 1.638-5.114 1.075-1.173 2.535-1.758 4.361-1.758 1.689 0 3.007.539 3.941 1.621.934 1.081 1.406 2.579 1.406 4.493v1.806H4.054c.037.894.293 1.595.768 2.102.474.508 1.172.761 2.095.761.84 0 1.595-.143 2.266-.429v2.95z"/></svg></a>
+                                        <a href="#" aria-label="LinkedIn" class="social-icon">
+                                            <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                                        </a>
+                                        <a href="#" aria-label="Behance" class="social-icon">
+                                            <svg viewBox="0 0 24 24"><path d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 1.295.693 1.97 1.755 1.97.795 0 1.439-.176 1.994-.893l1.007.893zm-8.09-3.56h4.274c-.129-1.06-.729-1.878-1.925-1.878-1.25 0-1.875.885-2.349 1.878zM6.486 20.304c-1.827 0-3.286-.699-4.361-2.098C1.05 16.807.487 15.102.487 12.872c0-2.237.567-3.942 1.638-5.114 1.075-1.173 2.535-1.758 4.361-1.758 1.689 0 3.007.539 3.941 1.621.934 1.081 1.406 2.579 1.406 4.493v1.806H4.054c.037.894.293 1.595.768 2.102.474.508 1.172.761 2.095.761.84 0 1.595-.143 2.266-.429v2.95z"/></svg>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -251,8 +412,12 @@
                                 <img src="/assets/images/team/thomas-mueller.jpg" alt="Thomas Müller">
                                 <div class="member-overlay">
                                     <div class="social-links">
-                                        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
-                                        <a href="#" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+                                        <a href="#" aria-label="LinkedIn" class="social-icon">
+                                            <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                                        </a>
+                                        <a href="#" aria-label="GitHub" class="social-icon">
+                                            <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -271,8 +436,12 @@
                                 <img src="/assets/images/team/sarah-schmidt.jpg" alt="Sarah Schmidt">
                                 <div class="member-overlay">
                                     <div class="social-links">
-                                        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
-                                        <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg></a>
+                                        <a href="#" aria-label="LinkedIn" class="social-icon">
+                                            <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                                        </a>
+                                        <a href="#" aria-label="Twitter" class="social-icon">
+                                            <svg viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -284,112 +453,71 @@
                         </div>
                     </div>
                     
-                    <!-- Team Member 5 -->
-                    <div class="team-member" data-aos="fade-up">
-                        <div class="member-card">
-                            <div class="member-image">
-                                <img src="/assets/images/team/michael-braun.jpg" alt="Michael Braun">
-                                <div class="member-overlay">
-                                    <div class="social-links">
-                                        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="member-info">
-                                <h3>Michael Braun</h3>
-                                <p class="member-role">UX/UI Designer</p>
-                                <p class="member-bio">User Experience Spezialist mit Fokus auf intuitive und ansprechende Interfaces.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Team Member 6 -->
-                    <div class="team-member" data-aos="fade-up" data-aos-delay="100">
-                        <div class="member-card">
-                            <div class="member-image">
-                                <img src="/assets/images/team/lisa-fischer.jpg" alt="Lisa Fischer">
-                                <div class="member-overlay">
-                                    <div class="social-links">
-                                        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="member-info">
-                                <h3>Lisa Fischer</h3>
-                                <p class="member-role">Project Manager</p>
-                                <p class="member-bio">Organisationstalent mit Leidenschaft für perfekte Projektabwicklung. Lisa hält alle Fäden zusammen.</p>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- Add more team members... -->
                 </div>
                 
-                <div class="team-cta">
+                <div class="team-cta" data-aos="fade-up">
                     <p>Möchten Sie Teil unseres Teams werden?</p>
                     <a href="/pages/kontakt.html" class="btn-secondary">Karriere bei MAWA</a>
                 </div>
             </div>
         </section>
         
-        <!-- Work Process -->
-        <section class="work-process" aria-labelledby="process-heading">
+        <!-- Work Process Section -->
+        <section id="prozess" class="process-section" aria-labelledby="process-heading">
             <div class="container">
-                <h2 id="process-heading" class="section-title text-center">Unsere Arbeitsweise</h2>
-                <p class="section-subtitle text-center">Strukturiert, transparent und erfolgsorientiert</p>
+                <div class="section-header">
+                    <h2 id="process-heading" class="section-title">
+                        <span class="title-number">04</span>
+                        Unsere Arbeitsweise
+                    </h2>
+                    <p class="section-lead">Strukturiert, transparent und erfolgsorientiert</p>
+                </div>
                 
-                <div class="process-flow">
-                    <div class="process-step" data-aos="fade-right">
-                        <div class="step-number">01</div>
-                        <div class="step-content">
+                <div class="process-timeline">
+                    <div class="timeline-item" data-aos="fade-right">
+                        <div class="timeline-marker">1</div>
+                        <div class="timeline-content">
                             <h3>Discovery</h3>
                             <p>Wir tauchen tief in Ihr Business ein, verstehen Ihre Ziele und Herausforderungen.</p>
                         </div>
                     </div>
                     
-                    <div class="process-connector"></div>
-                    
-                    <div class="process-step" data-aos="fade-left">
-                        <div class="step-number">02</div>
-                        <div class="step-content">
+                    <div class="timeline-item" data-aos="fade-left">
+                        <div class="timeline-marker">2</div>
+                        <div class="timeline-content">
                             <h3>Strategie</h3>
                             <p>Gemeinsam entwickeln wir die perfekte digitale Strategie für Ihren Erfolg.</p>
                         </div>
                     </div>
                     
-                    <div class="process-connector"></div>
-                    
-                    <div class="process-step" data-aos="fade-right">
-                        <div class="step-number">03</div>
-                        <div class="step-content">
+                    <div class="timeline-item" data-aos="fade-right">
+                        <div class="timeline-marker">3</div>
+                        <div class="timeline-content">
                             <h3>Design</h3>
                             <p>Kreative Konzepte werden zu beeindruckenden visuellen Erlebnissen.</p>
                         </div>
                     </div>
                     
-                    <div class="process-connector"></div>
-                    
-                    <div class="process-step" data-aos="fade-left">
-                        <div class="step-number">04</div>
-                        <div class="step-content">
+                    <div class="timeline-item" data-aos="fade-left">
+                        <div class="timeline-marker">4</div>
+                        <div class="timeline-content">
                             <h3>Entwicklung</h3>
                             <p>Mit modernsten Technologien setzen wir Ihre Vision präzise um.</p>
                         </div>
                     </div>
                     
-                    <div class="process-connector"></div>
-                    
-                    <div class="process-step" data-aos="fade-right">
-                        <div class="step-number">05</div>
-                        <div class="step-content">
+                    <div class="timeline-item" data-aos="fade-right">
+                        <div class="timeline-marker">5</div>
+                        <div class="timeline-content">
                             <h3>Launch</h3>
                             <p>Perfekt vorbereitet und getestet geht Ihr Projekt erfolgreich live.</p>
                         </div>
                     </div>
                     
-                    <div class="process-connector"></div>
-                    
-                    <div class="process-step" data-aos="fade-left">
-                        <div class="step-number">06</div>
-                        <div class="step-content">
+                    <div class="timeline-item" data-aos="fade-left">
+                        <div class="timeline-marker">6</div>
+                        <div class="timeline-content">
                             <h3>Growth</h3>
                             <p>Kontinuierliche Optimierung und Support für nachhaltigen Erfolg.</p>
                         </div>
@@ -398,31 +526,64 @@
             </div>
         </section>
         
-        <!-- Awards & Certifications -->
-        <section class="awards" aria-labelledby="awards-heading">
+        <!-- Awards Section -->
+        <section id="awards" class="about-section" aria-labelledby="awards-heading">
             <div class="container">
-                <h2 id="awards-heading" class="section-title text-center">Auszeichnungen & Partner</h2>
+                <div class="section-header">
+                    <h2 id="awards-heading" class="section-title">
+                        <span class="title-number">05</span>
+                        Auszeichnungen & Partner
+                    </h2>
+                    <p class="section-lead">Anerkannte Exzellenz in der digitalen Welt</p>
+                </div>
                 
                 <div class="awards-grid">
-                    <div class="award-item" data-aos="zoom-in">
-                        <img src="/assets/images/awards/webby-award.png" alt="Webby Award">
-                        <p>Webby Award 2023</p>
+                    <div class="award-card" data-aos="zoom-in">
+                        <div class="award-icon">
+                            <img src="/assets/images/awards/webby-award.png" alt="Webby Award">
+                        </div>
+                        <h3>Webby Award 2023</h3>
+                        <p>Best E-Commerce Website</p>
                     </div>
-                    <div class="award-item" data-aos="zoom-in" data-aos-delay="100">
-                        <img src="/assets/images/awards/awwwards.png" alt="Awwwards">
-                        <p>Awwwards Site of the Day</p>
+                    
+                    <div class="award-card" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="award-icon">
+                            <img src="/assets/images/awards/awwwards.png" alt="Awwwards">
+                        </div>
+                        <h3>Awwwards</h3>
+                        <p>Site of the Day</p>
                     </div>
-                    <div class="award-item" data-aos="zoom-in" data-aos-delay="200">
-                        <img src="/assets/images/awards/google-partner.png" alt="Google Partner">
-                        <p>Google Premium Partner</p>
+                    
+                    <div class="award-card" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="award-icon">
+                            <img src="/assets/images/awards/google-partner.png" alt="Google Partner">
+                        </div>
+                        <h3>Google Partner</h3>
+                        <p>Premium Partner Status</p>
                     </div>
-                    <div class="award-item" data-aos="zoom-in" data-aos-delay="300">
-                        <img src="/assets/images/awards/shopify-plus.png" alt="Shopify Plus Partner">
-                        <p>Shopify Plus Partner</p>
+                    
+                    <div class="award-card" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="award-icon">
+                            <img src="/assets/images/awards/shopify-plus.png" alt="Shopify Plus Partner">
+                        </div>
+                        <h3>Shopify Plus</h3>
+                        <p>Certified Partner</p>
                     </div>
-                    <div class="award-item" data-aos="zoom-in" data-aos-delay="400">
-                        <img src="/assets/images/awards/iso-cert.png" alt="ISO 9001">
-                        <p>ISO 9001 Zertifiziert</p>
+                    
+                    <div class="award-card" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="award-icon">
+                            <img src="/assets/images/awards/iso-cert.png" alt="ISO 9001">
+                        </div>
+                        <h3>ISO 9001</h3>
+                        <p>Zertifiziertes Qualitätsmanagement</p>
+                    </div>
+                    
+                    <div class="award-card" data-aos="zoom-in" data-aos-delay="500">
+                        <div class="award-icon">
+                            <img src="/assets/images/awards/fwa.png" alt="FWA">
+                        </div>
+                        <h3>FWA</h3>
+                        <p>Site of the Month</p>
                     </div>
                 </div>
             </div>
@@ -430,9 +591,10 @@
         
         <!-- CTA Section -->
         <section class="cta-section gradient-bg" aria-labelledby="cta-heading">
+            <div class="particle-background" id="cta-particles"></div>
             <div class="container">
                 <div class="cta-content text-center">
-                    <h2 id="cta-heading" class="cta-title">Bereit für außergewöhnliche Ergebnisse?</h2>
+                    <h2 id="cta-heading" class="cta-title glitch-text" data-text="Bereit für außergewöhnliche Ergebnisse?">Bereit für außergewöhnliche Ergebnisse?</h2>
                     <p class="cta-text">Lassen Sie uns gemeinsam Ihre digitale Zukunft gestalten</p>
                     <a href="/pages/kontakt.html" class="btn-primary btn-large magic-button">
                         <span class="button-text">Jetzt kennenlernen</span>
@@ -508,5 +670,6 @@
     <script src="/js/animations.js" defer></script>
     <script src="/js/smooth-scroll.js" defer></script>
     <script src="/js/cookie-consent.js" defer></script>
+    <script src="/js/about.js" defer></script>
 </body>
 </html>
